@@ -1,0 +1,11 @@
+{        
+    "PACS": {
+        "DICOM_EXPORT_MODALITY": "CT",
+        "PACS_IP": "127.0.0.1",
+        "WORKSTATION_AE": "NECTEC02",        
+        "WORKSTATION_PORT": "104",
+        "PACS_AE": "DCM4CHEE",
+        "PACS_PORT": "11112",
+        "WORKSTATION_HOST": "127.0.0.1"
+    }    
+}
