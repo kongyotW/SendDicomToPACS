@@ -51,15 +51,15 @@ public class SendToPac {
             dcmsnd.setRemotePort(Integer.parseInt(ConfigConstant.PACS_CONECTION_INFO.PACS_PORT));
             dcmsnd.setCalling(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_AE);
             dcmsnd.setLocalPort(Integer.parseInt(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_PORT));
-            dcmsnd.setOfferDefaultTransferSyntaxInSeparatePresentationContext(false);
-            dcmsnd.setSendFileRef(false);
-            dcmsnd.setStorageCommitment(false);
-            dcmsnd.setPackPDV(true);
-            dcmsnd.setTcpNoDelay(true);
+//            dcmsnd.setOfferDefaultTransferSyntaxInSeparatePresentationContext(false);
+//            dcmsnd.setSendFileRef(false);
+//            dcmsnd.setStorageCommitment(false);
+//            dcmsnd.setPackPDV(true);
+//            dcmsnd.setTcpNoDelay(true);
 
             dcmsnd.addFile(file);
 
-            dcmsnd.configureTransferCapability();
+//            dcmsnd.configureTransferCapability();
             dcmsnd.start();
             dcmsnd.open();
             dcmsnd.send();

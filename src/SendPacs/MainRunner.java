@@ -6,7 +6,9 @@
 package SendPacs;
 
 import ProgramConfig.Configuration;
+import java.awt.BorderLayout;
 import java.io.File;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -22,6 +24,15 @@ public class MainRunner {
             JOptionPane.showMessageDialog(null, "READ CONFIG FILE ERROR, SYSTEM EXIT.");
             System.exit(0);
         }
+        
+        InfoPanel infoPanel = new InfoPanel();
+        InfoPanelAction infoPanelAction = new InfoPanelAction(infoPanel);
+        
+        JDialog mainDialog = new JDialog();
+        mainDialog.getContentPane().add(infoPanel);
+        mainDialog.pack();
+        mainDialog.setVisible(true);
+        
         SendToPac sendToPac = new SendToPac();
         boolean isPACSAvaliable = sendToPac.isPACSisAvaliable();
         System.out.println("isPACSAvaliable : " + isPACSAvaliable);
