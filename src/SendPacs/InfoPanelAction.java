@@ -22,6 +22,17 @@ public class InfoPanelAction implements ActionListener{
         this.setPanelInformation();
     }
     
+    public void setupButtonAction(){
+        infoPanel.getB_echo().setActionCommand("Echo");
+        infoPanel.getB_echo().addActionListener(this);
+        
+        infoPanel.getB_select_dicom().setActionCommand("SelectDCM");
+        infoPanel.getB_select_dicom().addActionListener(this);
+        
+        infoPanel.getB_send().setActionCommand("SendDICOM");
+        infoPanel.getB_send().addActionListener(this);
+    }
+    
     private void setPanelInformation(){
 //          = (String) pacsConfig.get("PACS_AE");
 //            ConfigConstant.PACS_CONECTION_INFO.PACS_IP = (String) pacsConfig.get("PACS_IP");
@@ -41,7 +52,13 @@ public class InfoPanelAction implements ActionListener{
     }
     
     @Override
-    public void actionPerformed(ActionEvent ae) {        
+    public void actionPerformed(ActionEvent ae) {     
+        if(ae.getActionCommand().equals("Echo")){
+            
+        }else if(ae.getActionCommand().equals("SelectDCM")){
+            
+        }else if(ae.getActionCommand().equals("SendDICOM")){
+        }
     }
     
 }

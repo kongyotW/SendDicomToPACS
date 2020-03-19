@@ -10,7 +10,7 @@ package SendPacs;
  * @author Windows10
  */
 public class InfoPanel extends javax.swing.JPanel {
-
+   
     /**
      * Creates new form InfoPanel
      */
@@ -48,7 +48,11 @@ public class InfoPanel extends javax.swing.JPanel {
         p_button = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         b_echo = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        b_select_dicom = new javax.swing.JButton();
+        b_send = new javax.swing.JButton();
+        p_ExitProgram = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        text_Status = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(500, 300));
         setLayout(new java.awt.GridLayout(3, 0));
@@ -173,17 +177,40 @@ public class InfoPanel extends javax.swing.JPanel {
         p_button.setMaximumSize(new java.awt.Dimension(32767, 150));
         p_button.setMinimumSize(new java.awt.Dimension(500, 150));
         p_button.setPreferredSize(new java.awt.Dimension(272, 150));
-        p_button.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        p_button.setLayout(new java.awt.BorderLayout());
 
         jPanel9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         b_echo.setText("Echo");
         jPanel9.add(b_echo);
 
-        jButton2.setText("Send");
-        jPanel9.add(jButton2);
+        b_select_dicom.setText("Select");
+        jPanel9.add(b_select_dicom);
 
-        p_button.add(jPanel9);
+        b_send.setText("Send");
+        jPanel9.add(b_send);
+
+        p_button.add(jPanel9, java.awt.BorderLayout.CENTER);
+
+        p_ExitProgram.setMaximumSize(new java.awt.Dimension(147, 40));
+        p_ExitProgram.setMinimumSize(new java.awt.Dimension(147, 40));
+        p_ExitProgram.setPreferredSize(new java.awt.Dimension(147, 40));
+        p_ExitProgram.setLayout(new javax.swing.BoxLayout(p_ExitProgram, javax.swing.BoxLayout.LINE_AXIS));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText(" Status : ");
+        jLabel19.setMaximumSize(new java.awt.Dimension(60, 18));
+        jLabel19.setMinimumSize(new java.awt.Dimension(60, 18));
+        jLabel19.setPreferredSize(new java.awt.Dimension(60, 18));
+        p_ExitProgram.add(jLabel19);
+
+        text_Status.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        text_Status.setMaximumSize(new java.awt.Dimension(400, 30));
+        text_Status.setMinimumSize(new java.awt.Dimension(400, 30));
+        text_Status.setPreferredSize(new java.awt.Dimension(400, 30));
+        p_ExitProgram.add(text_Status);
+
+        p_button.add(p_ExitProgram, java.awt.BorderLayout.SOUTH);
 
         add(p_button);
     }// </editor-fold>//GEN-END:initComponents
@@ -191,7 +218,9 @@ public class InfoPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_echo;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton b_select_dicom;
+    private javax.swing.JButton b_send;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel6;
@@ -203,9 +232,11 @@ public class InfoPanel extends javax.swing.JPanel {
     private javax.swing.JLabel l_PleaseSpe5;
     private javax.swing.JLabel l_teethNo;
     private javax.swing.JLabel l_teethNo2;
+    private javax.swing.JPanel p_ExitProgram;
     private javax.swing.JPanel p_button;
     private javax.swing.JPanel p_pacsInfo;
     private javax.swing.JPanel p_workstationInfo;
+    private javax.swing.JTextField text_Status;
     private javax.swing.JTextField txt_aePACS;
     private javax.swing.JTextField txt_aeWorkstation;
     private javax.swing.JTextField txt_ipPACS;
@@ -264,4 +295,21 @@ public class InfoPanel extends javax.swing.JPanel {
     public void setTxt_aeWorkstation(String txt_aeWorkstation) {
         this.txt_aeWorkstation.setText(txt_aeWorkstation);
     }
+
+    public javax.swing.JButton getB_echo() {
+        return b_echo;
+    }
+
+    public javax.swing.JButton getB_select_dicom() {
+        return b_select_dicom;
+    }
+
+    public javax.swing.JButton getB_send() {
+        return b_send;
+    }
+    
+    public void setTextStatus(String statusVal){
+        this.text_Status.setText(statusVal);
+    }
+
 }

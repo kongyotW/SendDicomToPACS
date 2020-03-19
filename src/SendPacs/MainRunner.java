@@ -33,7 +33,7 @@ public class MainRunner {
         mainDialog.pack();
         mainDialog.setVisible(true);
         
-        SendToPac sendToPac = new SendToPac();
+        SendToPac sendToPac = new SendToPac(infoPanel);
         boolean isPACSAvaliable = sendToPac.isPACSisAvaliable();
         System.out.println("isPACSAvaliable : " + isPACSAvaliable);
         

@@ -17,6 +17,10 @@ import org.dcm4che2.tool.dcmsnd.DcmSnd;
  * @author user
  */
 public class SendToPac {    
+    private final InfoPanel indoInfoPanel;
+    public SendToPac(InfoPanel infoPanel) {
+        this.indoInfoPanel = infoPanel;
+    }
     
     protected boolean isPACSisAvaliable(){    
         DcmEcho dcmEcho = new DcmEcho("UNDEFINE");      
