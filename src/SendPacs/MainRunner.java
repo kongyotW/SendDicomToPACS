@@ -39,7 +39,9 @@ public class MainRunner {
         
         JFileChooser chooser= new JFileChooser();        
         int choice = chooser.showOpenDialog(null);
-        if (choice != JFileChooser.APPROVE_OPTION) return;
+        if (choice != JFileChooser.APPROVE_OPTION) {
+            System.exit(0);
+        }
         File chosenFile = chooser.getSelectedFile();        
         
         boolean isSendSuccess = sendToPac.sendDICOMToPACS(chosenFile);
