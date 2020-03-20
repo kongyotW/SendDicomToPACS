@@ -6,14 +6,12 @@
 package SendPacs;
 
 import ProgramConfig.ConfigConstant;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  *
  * @author Windows10
  */
-public class InfoPanelAction implements ActionListener{
+public class InfoPanelAction{
 
     private final InfoPanel infoPanel;
 
@@ -21,18 +19,7 @@ public class InfoPanelAction implements ActionListener{
         this.infoPanel = infoPanel;
         this.setPanelInformation();
     }
-    
-    public void setupButtonAction(){
-        infoPanel.getB_echo().setActionCommand("Echo");
-        infoPanel.getB_echo().addActionListener(this);
         
-        infoPanel.getB_select_dicom().setActionCommand("SelectDCM");
-        infoPanel.getB_select_dicom().addActionListener(this);
-        
-        infoPanel.getB_send().setActionCommand("SendDICOM");
-        infoPanel.getB_send().addActionListener(this);
-    }
-    
     private void setPanelInformation(){
 //          = (String) pacsConfig.get("PACS_AE");
 //            ConfigConstant.PACS_CONECTION_INFO.PACS_IP = (String) pacsConfig.get("PACS_IP");
@@ -49,16 +36,6 @@ public class InfoPanelAction implements ActionListener{
         infoPanel.setTxt_ipWorkstation(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_HOST);
         infoPanel.setTxt_portWorkstation(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_PORT);
         infoPanel.setTxt_aeWorkstation(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_AE);
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent ae) {     
-        if(ae.getActionCommand().equals("Echo")){
-            
-        }else if(ae.getActionCommand().equals("SelectDCM")){
-            
-        }else if(ae.getActionCommand().equals("SendDICOM")){
-        }
     }
     
 }

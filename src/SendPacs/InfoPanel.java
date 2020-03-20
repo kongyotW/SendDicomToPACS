@@ -33,7 +33,6 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_ipPACS = new javax.swing.JTextField();
         l_PleaseSpe1 = new javax.swing.JLabel();
         txt_portPACS = new javax.swing.JTextField();
-        jPanel6 = new javax.swing.JPanel();
         l_teethNo = new javax.swing.JLabel();
         txt_aePACS = new javax.swing.JTextField();
         p_workstationInfo = new javax.swing.JPanel();
@@ -42,20 +41,12 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_ipWorkstation = new javax.swing.JTextField();
         l_PleaseSpe5 = new javax.swing.JLabel();
         txt_portWorkstation = new javax.swing.JTextField();
-        jPanel11 = new javax.swing.JPanel();
         l_teethNo2 = new javax.swing.JLabel();
         txt_aeWorkstation = new javax.swing.JTextField();
-        p_button = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        b_echo = new javax.swing.JButton();
-        b_select_dicom = new javax.swing.JButton();
-        b_send = new javax.swing.JButton();
-        p_ExitProgram = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        text_Status = new javax.swing.JTextField();
 
-        setPreferredSize(new java.awt.Dimension(500, 300));
-        setLayout(new java.awt.GridLayout(3, 0));
+        setMinimumSize(new java.awt.Dimension(600, 280));
+        setPreferredSize(new java.awt.Dimension(600, 280));
+        setLayout(new java.awt.GridLayout(2, 0));
 
         p_pacsInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PACS Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
         p_pacsInfo.setMaximumSize(new java.awt.Dimension(32767, 150));
@@ -73,9 +64,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe.setPreferredSize(new java.awt.Dimension(80, 25));
         jPanel8.add(l_PleaseSpe);
 
-        txt_ipPACS.setMaximumSize(new java.awt.Dimension(160, 36));
-        txt_ipPACS.setMinimumSize(new java.awt.Dimension(160, 36));
-        txt_ipPACS.setPreferredSize(new java.awt.Dimension(160, 36));
+        txt_ipPACS.setMaximumSize(new java.awt.Dimension(120, 36));
+        txt_ipPACS.setMinimumSize(new java.awt.Dimension(120, 36));
+        txt_ipPACS.setPreferredSize(new java.awt.Dimension(120, 36));
         txt_ipPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel8.add(txt_ipPACS);
 
@@ -93,25 +84,21 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_portPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel8.add(txt_portPACS);
 
-        p_pacsInfo.add(jPanel8);
-
-        jPanel6.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
         l_teethNo.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         l_teethNo.setText("AE Title :");
         l_teethNo.setEnabled(false);
         l_teethNo.setMaximumSize(new java.awt.Dimension(80, 25));
         l_teethNo.setMinimumSize(new java.awt.Dimension(80, 25));
         l_teethNo.setPreferredSize(new java.awt.Dimension(80, 25));
-        jPanel6.add(l_teethNo);
+        jPanel8.add(l_teethNo);
 
         txt_aePACS.setMaximumSize(new java.awt.Dimension(120, 36));
         txt_aePACS.setMinimumSize(new java.awt.Dimension(120, 36));
         txt_aePACS.setPreferredSize(new java.awt.Dimension(120, 36));
         txt_aePACS.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel6.add(txt_aePACS);
+        jPanel8.add(txt_aePACS);
 
-        p_pacsInfo.add(jPanel6);
+        p_pacsInfo.add(jPanel8);
 
         add(p_pacsInfo);
 
@@ -131,9 +118,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe4.setPreferredSize(new java.awt.Dimension(80, 25));
         jPanel10.add(l_PleaseSpe4);
 
-        txt_ipWorkstation.setMaximumSize(new java.awt.Dimension(160, 36));
-        txt_ipWorkstation.setMinimumSize(new java.awt.Dimension(160, 36));
-        txt_ipWorkstation.setPreferredSize(new java.awt.Dimension(160, 36));
+        txt_ipWorkstation.setMaximumSize(new java.awt.Dimension(120, 36));
+        txt_ipWorkstation.setMinimumSize(new java.awt.Dimension(120, 36));
+        txt_ipWorkstation.setPreferredSize(new java.awt.Dimension(120, 36));
         txt_ipWorkstation.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel10.add(txt_ipWorkstation);
 
@@ -151,92 +138,37 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_portWorkstation.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel10.add(txt_portWorkstation);
 
-        p_workstationInfo.add(jPanel10);
-
-        jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
         l_teethNo2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         l_teethNo2.setText("AE Title :");
         l_teethNo2.setEnabled(false);
         l_teethNo2.setMaximumSize(new java.awt.Dimension(80, 25));
         l_teethNo2.setMinimumSize(new java.awt.Dimension(80, 25));
         l_teethNo2.setPreferredSize(new java.awt.Dimension(80, 25));
-        jPanel11.add(l_teethNo2);
+        jPanel10.add(l_teethNo2);
 
         txt_aeWorkstation.setMaximumSize(new java.awt.Dimension(120, 36));
         txt_aeWorkstation.setMinimumSize(new java.awt.Dimension(120, 36));
         txt_aeWorkstation.setPreferredSize(new java.awt.Dimension(120, 36));
         txt_aeWorkstation.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel11.add(txt_aeWorkstation);
+        jPanel10.add(txt_aeWorkstation);
 
-        p_workstationInfo.add(jPanel11);
+        p_workstationInfo.add(jPanel10);
 
         add(p_workstationInfo);
-
-        p_button.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Action", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
-        p_button.setMaximumSize(new java.awt.Dimension(32767, 150));
-        p_button.setMinimumSize(new java.awt.Dimension(500, 150));
-        p_button.setPreferredSize(new java.awt.Dimension(272, 150));
-        p_button.setLayout(new java.awt.BorderLayout());
-
-        jPanel9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
-        b_echo.setText("Echo");
-        jPanel9.add(b_echo);
-
-        b_select_dicom.setText("Select");
-        jPanel9.add(b_select_dicom);
-
-        b_send.setText("Send");
-        jPanel9.add(b_send);
-
-        p_button.add(jPanel9, java.awt.BorderLayout.CENTER);
-
-        p_ExitProgram.setMaximumSize(new java.awt.Dimension(147, 40));
-        p_ExitProgram.setMinimumSize(new java.awt.Dimension(147, 40));
-        p_ExitProgram.setPreferredSize(new java.awt.Dimension(147, 40));
-        p_ExitProgram.setLayout(new javax.swing.BoxLayout(p_ExitProgram, javax.swing.BoxLayout.LINE_AXIS));
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel19.setText(" Status : ");
-        jLabel19.setMaximumSize(new java.awt.Dimension(60, 18));
-        jLabel19.setMinimumSize(new java.awt.Dimension(60, 18));
-        jLabel19.setPreferredSize(new java.awt.Dimension(60, 18));
-        p_ExitProgram.add(jLabel19);
-
-        text_Status.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        text_Status.setMaximumSize(new java.awt.Dimension(400, 30));
-        text_Status.setMinimumSize(new java.awt.Dimension(400, 30));
-        text_Status.setPreferredSize(new java.awt.Dimension(400, 30));
-        p_ExitProgram.add(text_Status);
-
-        p_button.add(p_ExitProgram, java.awt.BorderLayout.SOUTH);
-
-        add(p_button);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton b_echo;
-    private javax.swing.JButton b_select_dicom;
-    private javax.swing.JButton b_send;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel l_PleaseSpe;
     private javax.swing.JLabel l_PleaseSpe1;
     private javax.swing.JLabel l_PleaseSpe4;
     private javax.swing.JLabel l_PleaseSpe5;
     private javax.swing.JLabel l_teethNo;
     private javax.swing.JLabel l_teethNo2;
-    private javax.swing.JPanel p_ExitProgram;
-    private javax.swing.JPanel p_button;
     private javax.swing.JPanel p_pacsInfo;
     private javax.swing.JPanel p_workstationInfo;
-    private javax.swing.JTextField text_Status;
     private javax.swing.JTextField txt_aePACS;
     private javax.swing.JTextField txt_aeWorkstation;
     private javax.swing.JTextField txt_ipPACS;
@@ -296,20 +228,6 @@ public class InfoPanel extends javax.swing.JPanel {
         this.txt_aeWorkstation.setText(txt_aeWorkstation);
     }
 
-    public javax.swing.JButton getB_echo() {
-        return b_echo;
-    }
-
-    public javax.swing.JButton getB_select_dicom() {
-        return b_select_dicom;
-    }
-
-    public javax.swing.JButton getB_send() {
-        return b_send;
-    }
     
-    public void setTextStatus(String statusVal){
-        this.text_Status.setText(statusVal);
-    }
 
 }

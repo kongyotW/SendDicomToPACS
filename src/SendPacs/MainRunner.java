@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.io.File;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,24 +29,28 @@ public class MainRunner {
         InfoPanel infoPanel = new InfoPanel();
         InfoPanelAction infoPanelAction = new InfoPanelAction(infoPanel);
         
+        DicomListPanel dicomListPanel = new DicomListPanel();
+        DicomListPanelAction dicomListPanelAction = new DicomListPanelAction(dicomListPanel);
+        dicomListPanelAction.setupButtonAction();
+        
+        MainPanel mainPanel = new MainPanel();
+        mainPanel.add(infoPanel, BorderLayout.NORTH);
+        mainPanel.add(dicomListPanel, BorderLayout.CENTER);
+        
+        PacsManager.getInstance().setupInfoPanel(infoPanel);
+        
         JDialog mainDialog = new JDialog();
-        mainDialog.getContentPane().add(infoPanel);
+        mainDialog.getContentPane().add(mainPanel);
         mainDialog.pack();
+        mainDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        mainDialog.setModal(true);
         mainDialog.setVisible(true);
         
-        SendToPac sendToPac = new SendToPac(infoPanel);
-        boolean isPACSAvaliable = sendToPac.isPACSisAvaliable();
-        System.out.println("isPACSAvaliable : " + isPACSAvaliable);
+//        PacsManager sendToPac = new PacsManager(infoPanel);
+//        boolean isPACSAvaliable = sendToPac.isPACSisAvaliable();
+//        System.out.println("isPACSAvaliable : " + isPACSAvaliable);
+//        
         
-        JFileChooser chooser= new JFileChooser();        
-        int choice = chooser.showOpenDialog(null);
-        if (choice != JFileChooser.APPROVE_OPTION) {
-            System.exit(0);
-        }
-        File chosenFile = chooser.getSelectedFile();        
-        
-        boolean isSendSuccess = sendToPac.sendDICOMToPACS(chosenFile);
-        System.out.println("isSendSuccess : " + isSendSuccess);
         System.exit(0);
     }
 }

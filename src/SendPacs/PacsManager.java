@@ -16,20 +16,28 @@ import org.dcm4che2.tool.dcmsnd.DcmSnd;
  *
  * @author user
  */
-public class SendToPac {    
-    private final InfoPanel indoInfoPanel;
-    public SendToPac(InfoPanel infoPanel) {
-        this.indoInfoPanel = infoPanel;
+public class PacsManager {    
+    private InfoPanel infoPanel;
+    
+    private static final PacsManager instance = new PacsManager();
+    public static PacsManager getInstance() {
+        return instance;
+    }     
+    private PacsManager(){}
+    
+    public void setupInfoPanel(InfoPanel infoPanel) {
+        this.infoPanel = infoPanel;
     }
     
     protected boolean isPACSisAvaliable(){    
         DcmEcho dcmEcho = new DcmEcho("UNDEFINE");      
-        dcmEcho.setCalledAET(ConfigConstant.PACS_CONECTION_INFO.PACS_AE,true);                       
-        dcmEcho.setRemoteHost(ConfigConstant.PACS_CONECTION_INFO.PACS_IP);
-        dcmEcho.setRemotePort(Integer.parseInt(ConfigConstant.PACS_CONECTION_INFO.PACS_PORT));
         
-        dcmEcho.setCalling(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_AE);     
-        dcmEcho.setLocalHost(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_HOST);
+        dcmEcho.setCalledAET(infoPanel.getTxt_aePACS().getText(),true);                       
+        dcmEcho.setRemoteHost(infoPanel.getTxt_ipPACS().getText());
+        dcmEcho.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
+        
+        dcmEcho.setCalling(infoPanel.getTxt_aeWorkstation().getText());     
+        dcmEcho.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());
         
         boolean dcmPacsStatus= false;
         try {
@@ -50,11 +58,12 @@ public class SendToPac {
     protected boolean sendDICOMToPACS(File file) {
         DcmSnd dcmsnd = new DcmSnd();
         try {
-            dcmsnd.setCalledAET(ConfigConstant.PACS_CONECTION_INFO.PACS_AE);
-            dcmsnd.setRemoteHost(ConfigConstant.PACS_CONECTION_INFO.PACS_IP);
-            dcmsnd.setRemotePort(Integer.parseInt(ConfigConstant.PACS_CONECTION_INFO.PACS_PORT));
-            dcmsnd.setCalling(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_AE);
-            dcmsnd.setLocalPort(Integer.parseInt(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_PORT));
+            dcmsnd.setCalledAET(infoPanel.getTxt_aePACS().getText());
+            dcmsnd.setRemoteHost(infoPanel.getTxt_ipPACS().getText());
+            dcmsnd.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
+            
+            dcmsnd.setCalling(infoPanel.getTxt_aeWorkstation().getText());
+            dcmsnd.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());
 //            dcmsnd.setOfferDefaultTransferSyntaxInSeparatePresentationContext(false);
 //            dcmsnd.setSendFileRef(false);
 //            dcmsnd.setStorageCommitment(false);
