@@ -65,11 +65,11 @@ public class PacsManager {
             dcmsnd.setCalling(infoPanel.getTxt_aeWorkstation().getText());
             dcmsnd.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());   
             
-//            dcmsnd.setOfferDefaultTransferSyntaxInSeparatePresentationContext(false);
-//            dcmsnd.setSendFileRef(false);
-//            dcmsnd.setStorageCommitment(false);
-//            dcmsnd.setPackPDV(true);
-//            dcmsnd.setTcpNoDelay(true);
+            dcmsnd.setOfferDefaultTransferSyntaxInSeparatePresentationContext(false);
+            dcmsnd.setSendFileRef(false);
+            dcmsnd.setStorageCommitment(false);
+            dcmsnd.setPackPDV(true);
+            dcmsnd.setTcpNoDelay(true);
 
             dcmsnd.addFile(file);
 
