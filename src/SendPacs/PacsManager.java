@@ -61,9 +61,10 @@ public class PacsManager {
             dcmsnd.setCalledAET(infoPanel.getTxt_aePACS().getText());
             dcmsnd.setRemoteHost(infoPanel.getTxt_ipPACS().getText());
             dcmsnd.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
-            
+                    
             dcmsnd.setCalling(infoPanel.getTxt_aeWorkstation().getText());
-            dcmsnd.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());
+            dcmsnd.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());   
+            
 //            dcmsnd.setOfferDefaultTransferSyntaxInSeparatePresentationContext(false);
 //            dcmsnd.setSendFileRef(false);
 //            dcmsnd.setStorageCommitment(false);
@@ -72,7 +73,7 @@ public class PacsManager {
 
             dcmsnd.addFile(file);
 
-//            dcmsnd.configureTransferCapability();
+            dcmsnd.configureTransferCapability();
             dcmsnd.start();
             dcmsnd.open();
             dcmsnd.send();
