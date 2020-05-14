@@ -37,7 +37,7 @@ public class PacsManager {
         dcmEcho.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
         
         dcmEcho.setCalling(infoPanel.getTxt_aeWorkstation().getText());     
-        dcmEcho.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());
+//        dcmEcho.setLocalHost(infoPanel.getTxt_ipWorkstation().getText()); //O_o"
         
         boolean dcmPacsStatus= false;
         try {
@@ -57,13 +57,13 @@ public class PacsManager {
     
     protected boolean sendDICOMToPACS(File file) {
         DcmSnd dcmsnd = new DcmSnd();
-        try {
+        try {                        
             dcmsnd.setCalledAET(infoPanel.getTxt_aePACS().getText());
             dcmsnd.setRemoteHost(infoPanel.getTxt_ipPACS().getText());
             dcmsnd.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
                     
             dcmsnd.setCalling(infoPanel.getTxt_aeWorkstation().getText());
-            dcmsnd.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());   
+//            dcmsnd.setLocalHost(infoPanel.getTxt_ipWorkstation().getText());  //O_o"
             
             dcmsnd.setOfferDefaultTransferSyntaxInSeparatePresentationContext(false);
             dcmsnd.setSendFileRef(false);
@@ -78,6 +78,7 @@ public class PacsManager {
             dcmsnd.open();
             dcmsnd.send();
             dcmsnd.close();
+                        
             return true;
         } catch (IOException | ConfigurationException | InterruptedException e) {            
             System.err.println("ERROR: Failed to start server for receiving "

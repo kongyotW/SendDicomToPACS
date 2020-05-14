@@ -5,6 +5,7 @@
  */
 package SendPacs;
 
+import LogDisplay.TextAreaLogProgram;
 import ProgramConfig.Configuration;
 import java.awt.BorderLayout;
 import java.io.File;
@@ -12,6 +13,7 @@ import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -25,7 +27,12 @@ public class MainRunner {
             JOptionPane.showMessageDialog(null, "READ CONFIG FILE ERROR, SYSTEM EXIT.");
             System.exit(0);
         }
-        
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new TextAreaLogProgram().setVisible(true);
+            }
+        });
         InfoPanel infoPanel = new InfoPanel();
         InfoPanelAction infoPanelAction = new InfoPanelAction(infoPanel);
         
@@ -43,14 +50,13 @@ public class MainRunner {
         mainDialog.getContentPane().add(mainPanel);
         mainDialog.pack();
         mainDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        mainDialog.setModal(true);
+//        mainDialog.setModal(true);
         mainDialog.setVisible(true);
         
 //        PacsManager sendToPac = new PacsManager(infoPanel);
 //        boolean isPACSAvaliable = sendToPac.isPACSisAvaliable();
 //        System.out.println("isPACSAvaliable : " + isPACSAvaliable);
-//        
-        
-        System.exit(0);
+//                
+//        System.exit(0);
     }
 }
