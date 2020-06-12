@@ -20,7 +20,8 @@ import javax.swing.JTable;
 public class DicomListPanelAction implements ActionListener{
     private final DicomListPanel dicomListPanel;
     private final TableDicomModel tableDicomModel;
-
+    private boolean isCommitToPACS = true;
+    
     public DicomListPanelAction(DicomListPanel dicomListPanel) {
         this.dicomListPanel = dicomListPanel;
         this.tableDicomModel = new TableDicomModel();
@@ -86,11 +87,19 @@ public class DicomListPanelAction implements ActionListener{
                 if(fileToSend.exists()){
                     HashMap dicomMapper = DicomListDataStruct.getInstance().getModeCtInfoHash();
                     System.out.println("fPath To Send : " + dicomPathList.get(i));
-                    boolean isSendComplete = PacsManager.getInstance().sendDICOMToPACS(fileToSend);
-                    if(isSendComplete)
+                             
+                    boolean isSendComplete = false;
+                    if(isCommitToPACS){
+                        isSendComplete = PacsManager.getInstance().sendDICOMToPACSWithCommit(fileToSend);
+                    }else{
+                        isSendComplete = PacsManager.getInstance().sendDICOMToPACS(fileToSend);
+                    }                    
+                    
+                    if(isSendComplete){
                         dicomMapper.put(dicomPath, DicomListDataStruct.Status_Complete);
-                    else
+                    }else{
                         dicomMapper.put(dicomPath, DicomListDataStruct.Status_Fail);
+                    }
                     System.out.println("isSendComplete : " + isSendComplete);
                 }                
             }
