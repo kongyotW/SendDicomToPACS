@@ -6,6 +6,8 @@
 package SendPacs;
 
 import ProgramConfig.Configuration;
+import QueryPacs.QueryPanel;
+import QueryPacs.QueryPanelAction;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.io.IOException;
@@ -69,9 +71,14 @@ public class MainRunner {
         DicomListPanelAction dicomListPanelAction = new DicomListPanelAction(dicomListPanel);
         dicomListPanelAction.setupButtonAction();
         
+        QueryPanel queryPanel = new QueryPanel();
+        QueryPanelAction queryPanelAction = new QueryPanelAction(queryPanel, infoPanel);
+        queryPanelAction.setupButtonAction();
+        
         MainPanel mainPanel = new MainPanel();
         mainPanel.add(infoPanel, BorderLayout.NORTH);
         mainPanel.add(dicomListPanel, BorderLayout.CENTER);
+        mainPanel.add(queryPanel, BorderLayout.SOUTH);
         
         PacsManager.getInstance().setupInfoPanel(infoPanel);
         
