@@ -53,16 +53,18 @@ public class QueryPanelAction implements ActionListener {
         dcmqr.setCalledAET(infoPanel.getTxt_aePACS().getText(), true);
         dcmqr.setRemoteHost(infoPanel.getTxt_ipPACS().getText());
         dcmqr.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
+        dcmqr.setCalling(infoPanel.getTxt_aeWorkstation().getText());
 //        dcmqr.setLocalHost("192.168.39.219");
-        dcmqr.setLocalPort(104);
-
+//        dcmqr.setLocalPort(104);
+        
         dcmqr.getKeys();
         dcmqr.setDateTimeMatching(true);
         dcmqr.setCFind(true);
                 
-        dcmqr.setQueryLevel(DcmQR.QueryRetrieveLevel.IMAGE);
+        dcmqr.setQueryLevel(DcmQR.QueryRetrieveLevel.STUDY);
         dcmqr.addReturnKey(new int[]{Tag.PatientID});
         dcmqr.addReturnKey(new int[]{Tag.PatientName});
+        dcmqr.addReturnKey(new int[]{Tag.SeriesInstanceUID});
         
         dcmqr.addMatchingKey(new int[]{Tag.Modality},queryPanel.gettxt_queryModality().getText()); 
         dcmqr.addMatchingKey(new int[]{Tag.SeriesInstanceUID},queryPanel.gettxt_querySerieUID().getText()); 

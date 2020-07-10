@@ -18,6 +18,8 @@ public class ConfigConstant {
         
         public static String WORKSTATION_PORT = "104";
         public static String WORKSTATION_AE = "SCANNER01";                
-        public static String WORKSTATION_HOST = "127.0.0.1";                
+        public static String WORKSTATION_HOST = "127.0.0.1";
+        
+        public static boolean IS_SEND_WITH_COMMIT = false;
     }
 }

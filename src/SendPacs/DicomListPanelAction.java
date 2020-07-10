@@ -5,6 +5,7 @@
  */
 package SendPacs;
 
+import ProgramConfig.ConfigConstant;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -20,7 +21,7 @@ import javax.swing.JTable;
 public class DicomListPanelAction implements ActionListener{
     private final DicomListPanel dicomListPanel;
     private final TableDicomModel tableDicomModel;
-    private boolean isCommitToPACS = true;
+//    private boolean isCommitToPACS = false;
     
     public DicomListPanelAction(DicomListPanel dicomListPanel) {
         this.dicomListPanel = dicomListPanel;
@@ -89,7 +90,7 @@ public class DicomListPanelAction implements ActionListener{
                     System.out.println("fPath To Send : " + dicomPathList.get(i));
                              
                     boolean isSendComplete = false;
-                    if(isCommitToPACS){
+                    if(ConfigConstant.PACS_CONECTION_INFO.IS_SEND_WITH_COMMIT){
                         isSendComplete = PacsManager.getInstance().sendDICOMToPACSWithCommit(fileToSend);
                     }else{
                         isSendComplete = PacsManager.getInstance().sendDICOMToPACS(fileToSend);

@@ -6,6 +6,7 @@
         "WORKSTATION_PORT": "11112",
         "PACS_AE": "DCM4CHEE",
         "PACS_PORT": "11112",
-        "WORKSTATION_HOST": "10.222.46.245"
+        "WORKSTATION_HOST": "10.222.46.245",
+        "IS_SEND_WITH_COMMIT":false
     }    
 }

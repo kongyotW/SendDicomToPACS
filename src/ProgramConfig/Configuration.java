@@ -28,6 +28,9 @@ public class Configuration {
             ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_AE = (String) pacsConfig.get("WORKSTATION_AE"); 
             ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_PORT = (String) pacsConfig.get("WORKSTATION_PORT");
             ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_HOST = (String) pacsConfig.get("WORKSTATION_HOST");
+            
+            
+            ConfigConstant.PACS_CONECTION_INFO.IS_SEND_WITH_COMMIT = (boolean) pacsConfig.get("IS_SEND_WITH_COMMIT");
                         
             System.out.println("\t-----------Pacs---------"+ "\n"            
             +"\t PACS_AE : " + ConfigConstant.PACS_CONECTION_INFO.PACS_AE+ "\n"
