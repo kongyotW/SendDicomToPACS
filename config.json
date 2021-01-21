@@ -1,12 +1,18 @@
 {        
-    "PACS": {
-        "DICOM_EXPORT_MODALITY": "CT",
+    "INFO": {
         "PACS_IP": "127.0.0.1",
-        "WORKSTATION_AE": "NECTEC01",        
-        "WORKSTATION_PORT": "11112",
         "PACS_AE": "DCM4CHEE",
         "PACS_PORT": "11112",
+        
+        "WORKSTATION_AE": "NECTEC01",        
+        "WORKSTATION_PORT": "11112",        
         "WORKSTATION_HOST": "10.222.46.245",
-        "IS_SEND_WITH_COMMIT":false
-    }    
+        "IS_SEND_WITH_COMMIT":false,
+                
+        "WORKLIST_IP": "127.0.0.1",
+        "WORKLIST_AE": "DCM4CHEE",
+        "WORKLIST_PORT": "11112"
+    }  
+       
+    
 }

@@ -6,12 +6,14 @@
 package SendPacs;
 
 import ProgramConfig.ConfigConstant;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
  * @author Windows10
  */
-public class InfoPanelAction{
+public class InfoPanelAction implements ActionListener{
 
     private final InfoPanel infoPanel;
 
@@ -21,21 +23,56 @@ public class InfoPanelAction{
     }
         
     private void setPanelInformation(){
-//          = (String) pacsConfig.get("PACS_AE");
-//            ConfigConstant.PACS_CONECTION_INFO.PACS_IP = (String) pacsConfig.get("PACS_IP");
-//            ConfigConstant.PACS_CONECTION_INFO.PACS_PORT = (String) pacsConfig.get("PACS_PORT");
-//            ConfigConstant.PACS_CONECTION_INFO.MODALITY = (String) pacsConfig.get("DICOM_EXPORT_MODALITY");            
-//            ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_AE = (String) pacsConfig.get("WORKSTATION_AE"); 
-//            ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_PORT = (String) pacsConfig.get("WORKSTATION_PORT");
-//            ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_HOST = (String) pacsConfig.get("WORKSTATION_HOST");
-                        
         infoPanel.setTxt_ipPACS(ConfigConstant.PACS_CONECTION_INFO.PACS_IP);
         infoPanel.setTxt_portPACS(ConfigConstant.PACS_CONECTION_INFO.PACS_PORT);
         infoPanel.setTxt_aePACS(ConfigConstant.PACS_CONECTION_INFO.PACS_AE);
+        
+        infoPanel.setTxt_ipWorklist(ConfigConstant.PACS_CONECTION_INFO.WORKLIST_IP);
+        infoPanel.setTxt_portWorklist(ConfigConstant.PACS_CONECTION_INFO.WORKLIST_PORT);
+        infoPanel.setTxt_aeWorklist(ConfigConstant.PACS_CONECTION_INFO.WORKLIST_AE);
         
         infoPanel.setTxt_ipWorkstation(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_HOST);
         infoPanel.setTxt_portWorkstation(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_PORT);
         infoPanel.setTxt_aeWorkstation(ConfigConstant.PACS_CONECTION_INFO.WORKSTATION_AE);
     }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+         if(ae.getActionCommand().equals("B_Ping_PACS")){
+            boolean isPingOK = PacsManager.getInstance().isPingPACSOk();
+            if(isPingOK) infoPanel.getL_status_pacs().setText("Ping OK");
+            else infoPanel.getL_status_pacs().setText("Ping Fail!");
+         }
+         else if(ae.getActionCommand().equals("B_Echo_PACS")){
+            boolean isConnectOK = PacsManager.getInstance().isPACSisAvaliable();            
+            if(isConnectOK) infoPanel.getL_status_pacs().setText("Echo OK");
+            else infoPanel.getL_status_pacs().setText("Echo Fail!");
+         }
+         else if(ae.getActionCommand().equals("B_Ping_Worklist")){
+            boolean isPingOK = PacsManager.getInstance().isPingPACSOk();
+            if(isPingOK) infoPanel.getL_status_worklist().setText("Ping OK");
+            else infoPanel.getL_status_worklist().setText("Ping Fail!");
+         }
+         else if(ae.getActionCommand().equals("B_Echo_Worklist")){
+            boolean isConnectOK = PacsManager.getInstance().isWorklistisAvaliable();            
+            if(isConnectOK) infoPanel.getL_status_worklist().setText("Echo OK");
+            else infoPanel.getL_status_worklist().setText("Echo Fail!");
+         }                 
+    }
+    
+    public void setupButtonAction(){
+        infoPanel.getB_ping_pacs().setActionCommand("B_Ping_PACS");
+        infoPanel.getB_ping_pacs().addActionListener(this);
+        
+        infoPanel.getB_echo_pacs().setActionCommand("B_Echo_PACS");
+        infoPanel.getB_echo_pacs().addActionListener(this);
+        
+        infoPanel.getB_ping_worklist().setActionCommand("B_Ping_Worklist");
+        infoPanel.getB_ping_worklist().addActionListener(this);
+        
+        infoPanel.getB_echo_worklist().setActionCommand("B_Echo_Worklist");
+        infoPanel.getB_echo_worklist().addActionListener(this);
+    }
+    
     
 }

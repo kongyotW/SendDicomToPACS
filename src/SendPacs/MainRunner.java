@@ -6,8 +6,10 @@
 package SendPacs;
 
 import ProgramConfig.Configuration;
-import QueryPacs.QueryPanel;
-import QueryPacs.QueryPanelAction;
+import QueryPacs.QueryDicomPanel;
+import QueryPacs.QueryDicomPanelAction;
+import Worklist.QueryWorklistPanel;
+import Worklist.QueryWorklistPanelAction;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.io.IOException;
@@ -57,7 +59,6 @@ public class MainRunner {
             System.exit(0);
         }
                 
-        
 //        SwingUtilities.invokeLater(new Runnable() {
 //            @Override
 //            public void run() {
@@ -66,20 +67,29 @@ public class MainRunner {
 //        });
         InfoPanel infoPanel = new InfoPanel();
         InfoPanelAction infoPanelAction = new InfoPanelAction(infoPanel);
+        infoPanelAction.setupButtonAction();
         
         DicomListPanel dicomListPanel = new DicomListPanel();
         DicomListPanelAction dicomListPanelAction = new DicomListPanelAction(dicomListPanel);
         dicomListPanelAction.setupButtonAction();
         
-        QueryPanel queryPanel = new QueryPanel();
-        QueryPanelAction queryPanelAction = new QueryPanelAction(queryPanel, infoPanel);
+        QueryDicomPanel queryDicomPanel = new QueryDicomPanel();
+        QueryDicomPanelAction queryPanelAction = new QueryDicomPanelAction(queryDicomPanel, infoPanel);
         queryPanelAction.setupButtonAction();
         
+        QueryWorklistPanel queryWorklistPanel = new QueryWorklistPanel();
+        QueryWorklistPanelAction queryWorklistPanelAction = new QueryWorklistPanelAction(queryWorklistPanel, infoPanel);
+        queryWorklistPanelAction.setupButtonAction();
+                
         MainPanel mainPanel = new MainPanel();
         mainPanel.add(infoPanel, BorderLayout.NORTH);
         mainPanel.add(dicomListPanel, BorderLayout.CENTER);
-        mainPanel.add(queryPanel, BorderLayout.SOUTH);
         
+        SouthPanel southPanel = new SouthPanel();
+        southPanel.getTab_pane().addTab("Query Worklist", queryWorklistPanel);
+        southPanel.getTab_pane().addTab("Query DICOM", queryDicomPanel);
+        
+        mainPanel.add(southPanel, BorderLayout.SOUTH);        
         PacsManager.getInstance().setupInfoPanel(infoPanel);
         
         JDialog mainDialog = new JDialog();
@@ -87,8 +97,8 @@ public class MainRunner {
         mainDialog.pack();
         mainDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 //        mainDialog.setModal(true);
-        mainDialog.setVisible(true);
-                
+        mainDialog.setAlwaysOnTop(true);
+        mainDialog.setVisible(true);                
 //        PacsManager sendToPac = new PacsManager(infoPanel);
 //        boolean isPACSAvaliable = sendToPac.isPACSisAvaliable();
 //        System.out.println("isPACSAvaliable : " + isPACSAvaliable);

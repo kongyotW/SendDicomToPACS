@@ -28,10 +28,7 @@ public class DicomListPanelAction implements ActionListener{
         this.tableDicomModel = new TableDicomModel();
     }
     
-    public void setupButtonAction(){
-        dicomListPanel.getB_echo().setActionCommand("Echo");
-        dicomListPanel.getB_echo().addActionListener(this);
-        
+    public void setupButtonAction(){       
         dicomListPanel.getB_select_dicom().setActionCommand("SelectDCM");
         dicomListPanel.getB_select_dicom().addActionListener(this);
         
@@ -41,13 +38,7 @@ public class DicomListPanelAction implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getActionCommand().equals("Echo")){
-            
-            boolean isConnectOK = PacsManager.getInstance().isPACSisAvaliable();
-            
-            if(isConnectOK) dicomListPanel.setTextStatus("Echo OK");
-            else dicomListPanel.setTextStatus("Echo Fail!");
-        }else if(ae.getActionCommand().equals("SelectDCM")){            
+        if(ae.getActionCommand().equals("SelectDCM")){            
             JFileChooser chooser= new JFileChooser();    
             chooser.setMultiSelectionEnabled(true);
             chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -74,9 +65,9 @@ public class DicomListPanelAction implements ActionListener{
             table.getColumnModel().getColumn(0).setMaxWidth(50);
             table.getColumnModel().getColumn(1).setPreferredWidth(220);
             table.getColumnModel().getColumn(1).setMinWidth(220);
-            table.getColumnModel().getColumn(2).setPreferredWidth(50);
-            table.getColumnModel().getColumn(2).setMinWidth(50);
-            table.getColumnModel().getColumn(2).setMaxWidth(50); 
+            table.getColumnModel().getColumn(2).setPreferredWidth(80);
+            table.getColumnModel().getColumn(2).setMinWidth(80);
+            table.getColumnModel().getColumn(2).setMaxWidth(80); 
             table.revalidate();
             table.repaint();
             

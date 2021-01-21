@@ -12,7 +12,7 @@ import javax.swing.JTextField;
  *
  * @author cti
  */
-public class QueryPanel extends javax.swing.JPanel {
+public class QueryDicomPanel extends javax.swing.JPanel {
 
     public javax.swing.JButton getB_query() {
         return b_query;
@@ -32,7 +32,7 @@ public class QueryPanel extends javax.swing.JPanel {
     /**
      * Creates new form QueryPanel
      */
-    public QueryPanel() {
+    public QueryDicomPanel() {
         initComponents();
     }
 
@@ -57,9 +57,9 @@ public class QueryPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtA_searchResult = new javax.swing.JTextArea();
 
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        setMinimumSize(new java.awt.Dimension(600, 200));
-        setPreferredSize(new java.awt.Dimension(600, 200));
+        setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search DICOM in PACS Section", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        setMinimumSize(new java.awt.Dimension(600, 400));
+        setPreferredSize(new java.awt.Dimension(600, 400));
         setLayout(new java.awt.BorderLayout());
 
         jPanel9.setMaximumSize(new java.awt.Dimension(193, 33));

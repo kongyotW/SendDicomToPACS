@@ -42,8 +42,16 @@ public class TableDicomModel extends AbstractTableModel {
                 Object[] row = new Object[m_colNames.length];
                 row[0] = inxStr;
                 row[1] = pathDicom;
-                row[2] = status;
                 
+                   
+                if(status == DicomListDataStruct.Status_Complete){
+                    row[2] = "OK";
+                }else if(status == DicomListDataStruct.Status_Fail){
+                    row[2] = "FAIL";
+                }else if(status == DicomListDataStruct.Status_Prepare){
+                    row[2] = "PREPARE";
+                }
+                 
                 cacheResult.add(row);
             }            
         } catch (Exception e) {

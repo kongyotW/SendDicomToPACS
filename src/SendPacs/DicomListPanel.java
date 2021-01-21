@@ -28,7 +28,6 @@ public class DicomListPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel9 = new javax.swing.JPanel();
-        b_echo = new javax.swing.JButton();
         b_select_dicom = new javax.swing.JButton();
         b_send = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -39,6 +38,7 @@ public class DicomListPanel extends javax.swing.JPanel {
         jLabel19 = new javax.swing.JLabel();
         text_Status = new javax.swing.JTextField();
 
+        setBorder(javax.swing.BorderFactory.createTitledBorder("Send DICOM Section"));
         setMinimumSize(new java.awt.Dimension(600, 233));
         setPreferredSize(new java.awt.Dimension(600, 300));
         setLayout(new java.awt.BorderLayout());
@@ -46,13 +46,10 @@ public class DicomListPanel extends javax.swing.JPanel {
         jPanel9.setMaximumSize(new java.awt.Dimension(193, 33));
         jPanel9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        b_echo.setText("Echo");
-        jPanel9.add(b_echo);
-
-        b_select_dicom.setText("Select");
+        b_select_dicom.setText("Select DICOM");
         jPanel9.add(b_select_dicom);
 
-        b_send.setText("Send");
+        b_send.setText("Send DICOM");
         jPanel9.add(b_send);
 
         add(jPanel9, java.awt.BorderLayout.NORTH);
@@ -113,7 +110,7 @@ public class DicomListPanel extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -136,7 +133,6 @@ public class DicomListPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane DicomListScrollPane;
-    private javax.swing.JButton b_echo;
     private javax.swing.JButton b_select_dicom;
     private javax.swing.JButton b_send;
     private javax.swing.JTable dataTable;
@@ -147,10 +143,7 @@ public class DicomListPanel extends javax.swing.JPanel {
     private javax.swing.JPanel p_ExitProgram;
     private javax.swing.JTextField text_Status;
     // End of variables declaration//GEN-END:variables
-    public javax.swing.JButton getB_echo() {
-        return b_echo;
-    }
-
+   
     public javax.swing.JButton getB_select_dicom() {
         return b_select_dicom;
     }

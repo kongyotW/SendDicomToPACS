@@ -14,7 +14,12 @@ public class ConfigConstant {
         public static String PACS_IP = "127.0.0.1";
         public static String PACS_PORT = "11112";
         public static String PACS_AE = "DCM4CHEE";
-        public static String MODALITY = "";                
+//        public static String PACS_MODALITY = "";
+        
+        public static String WORKLIST_IP = "127.0.0.1";
+        public static String WORKLIST_PORT = "11112";
+        public static String WORKLIST_AE = "DCM4CHEE";
+//        public static String WORKLIST_MODALITY = "";        
         
         public static String WORKSTATION_PORT = "104";
         public static String WORKSTATION_AE = "SCANNER01";                
