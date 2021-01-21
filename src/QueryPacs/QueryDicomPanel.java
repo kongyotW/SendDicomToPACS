@@ -5,7 +5,6 @@
  */
 package QueryPacs;
 
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -14,21 +13,28 @@ import javax.swing.JTextField;
  */
 public class QueryDicomPanel extends javax.swing.JPanel {
 
-    public javax.swing.JButton getB_query() {
-        return b_query;
+    /**
+     * @return the txt_queryModality
+     */
+    public javax.swing.JTextField getTxt_queryModality() {
+        return txt_queryModality;
     }
 
-    public JTextArea gettxtA_searchResult(){
-        return txtA_searchResult;
+    /**
+     * @return the txt_queryInput1
+     */
+    public javax.swing.JTextField getTxt_Status() {
+        return text_Status;
+    }
+
+    public javax.swing.JButton getB_query() {
+        return b_query;
     }
     
     public JTextField gettxt_querySerieUID(){
         return txt_queryInput;
     }
-        
-    public JTextField gettxt_queryModality(){
-        return txt_queryInput1;
-    }
+    
     /**
      * Creates new form QueryPanel
      */
@@ -51,15 +57,16 @@ public class QueryDicomPanel extends javax.swing.JPanel {
         txt_queryInput = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        txt_queryInput1 = new javax.swing.JTextField();
+        txt_queryModality = new javax.swing.JTextField();
         b_query = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtA_searchResult = new javax.swing.JTextArea();
+        p_ExitProgram = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        text_Status = new javax.swing.JTextField();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search DICOM in PACS Section", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
-        setMinimumSize(new java.awt.Dimension(600, 400));
-        setPreferredSize(new java.awt.Dimension(600, 400));
+        setMinimumSize(new java.awt.Dimension(600, 150));
+        setPreferredSize(new java.awt.Dimension(600, 150));
         setLayout(new java.awt.BorderLayout());
 
         jPanel9.setMaximumSize(new java.awt.Dimension(193, 33));
@@ -81,9 +88,9 @@ public class QueryDicomPanel extends javax.swing.JPanel {
         jLabel2.setText("Modality :");
         jPanel3.add(jLabel2);
 
-        txt_queryInput1.setMinimumSize(new java.awt.Dimension(250, 20));
-        txt_queryInput1.setPreferredSize(new java.awt.Dimension(250, 20));
-        jPanel3.add(txt_queryInput1);
+        txt_queryModality.setMinimumSize(new java.awt.Dimension(250, 20));
+        txt_queryModality.setPreferredSize(new java.awt.Dimension(250, 20));
+        jPanel3.add(txt_queryModality);
 
         b_query.setText("Search");
         jPanel3.add(b_query);
@@ -92,33 +99,64 @@ public class QueryDicomPanel extends javax.swing.JPanel {
 
         add(jPanel9, java.awt.BorderLayout.NORTH);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Search Result"));
-        jPanel2.setMaximumSize(new java.awt.Dimension(500, 200));
-        jPanel2.setMinimumSize(new java.awt.Dimension(500, 200));
-        jPanel2.setPreferredSize(new java.awt.Dimension(500, 200));
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanel2.setMaximumSize(new java.awt.Dimension(500, 40));
+        jPanel2.setPreferredSize(new java.awt.Dimension(500, 40));
 
-        txtA_searchResult.setColumns(20);
-        txtA_searchResult.setRows(5);
-        jScrollPane1.setViewportView(txtA_searchResult);
+        p_ExitProgram.setMaximumSize(new java.awt.Dimension(147, 40));
+        p_ExitProgram.setMinimumSize(new java.awt.Dimension(147, 40));
+        p_ExitProgram.setPreferredSize(new java.awt.Dimension(147, 40));
+        p_ExitProgram.setLayout(new javax.swing.BoxLayout(p_ExitProgram, javax.swing.BoxLayout.LINE_AXIS));
 
-        jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText(" Status : ");
+        jLabel19.setMaximumSize(new java.awt.Dimension(60, 18));
+        jLabel19.setMinimumSize(new java.awt.Dimension(60, 18));
+        jLabel19.setPreferredSize(new java.awt.Dimension(60, 18));
+        p_ExitProgram.add(jLabel19);
 
-        add(jPanel2, java.awt.BorderLayout.CENTER);
+        text_Status.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        text_Status.setMaximumSize(new java.awt.Dimension(400, 30));
+        text_Status.setMinimumSize(new java.awt.Dimension(400, 30));
+        text_Status.setPreferredSize(new java.awt.Dimension(400, 30));
+        p_ExitProgram.add(text_Status);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 488, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(p_ExitProgram, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(p_ExitProgram, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        add(jPanel2, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_query;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtA_searchResult;
+    private javax.swing.JPanel p_ExitProgram;
+    private javax.swing.JTextField text_Status;
     private javax.swing.JTextField txt_queryInput;
-    private javax.swing.JTextField txt_queryInput1;
+    private javax.swing.JTextField txt_queryModality;
     // End of variables declaration//GEN-END:variables
 }

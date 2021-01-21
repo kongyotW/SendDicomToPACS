@@ -72,8 +72,8 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_portPACS = new javax.swing.JTextField();
         l_teethNo = new javax.swing.JLabel();
         txt_aePACS = new javax.swing.JTextField();
-        b_echo_pacs = new javax.swing.JButton();
         b_ping_pacs = new javax.swing.JButton();
+        b_echo_pacs = new javax.swing.JButton();
         l_status_pacs = new javax.swing.JLabel();
         p_worklistInfo = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
@@ -83,8 +83,8 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_portWorklist = new javax.swing.JTextField();
         l_teethNo1 = new javax.swing.JLabel();
         txt_aeWorklist = new javax.swing.JTextField();
-        b_echo_worklist = new javax.swing.JButton();
         b_ping_worklist = new javax.swing.JButton();
+        b_echo_worklist = new javax.swing.JButton();
         l_status_worklist = new javax.swing.JLabel();
         p_workstationInfo = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -149,17 +149,17 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_aePACS.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel8.add(txt_aePACS);
 
-        b_echo_pacs.setText("Echo");
-        b_echo_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_echo_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_echo_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
-        jPanel8.add(b_echo_pacs);
-
         b_ping_pacs.setText("Ping");
         b_ping_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
         b_ping_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
         b_ping_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
         jPanel8.add(b_ping_pacs);
+
+        b_echo_pacs.setText("Echo");
+        b_echo_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
+        b_echo_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
+        b_echo_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
+        jPanel8.add(b_echo_pacs);
 
         l_status_pacs.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         l_status_pacs.setEnabled(false);
@@ -222,17 +222,17 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_aeWorklist.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel11.add(txt_aeWorklist);
 
-        b_echo_worklist.setText("Echo");
-        b_echo_worklist.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_echo_worklist.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_echo_worklist.setPreferredSize(new java.awt.Dimension(80, 36));
-        jPanel11.add(b_echo_worklist);
-
         b_ping_worklist.setText("Ping");
         b_ping_worklist.setMaximumSize(new java.awt.Dimension(120, 36));
         b_ping_worklist.setMinimumSize(new java.awt.Dimension(80, 36));
         b_ping_worklist.setPreferredSize(new java.awt.Dimension(80, 36));
         jPanel11.add(b_ping_worklist);
+
+        b_echo_worklist.setText("Echo");
+        b_echo_worklist.setMaximumSize(new java.awt.Dimension(120, 36));
+        b_echo_worklist.setMinimumSize(new java.awt.Dimension(80, 36));
+        b_echo_worklist.setPreferredSize(new java.awt.Dimension(80, 36));
+        jPanel11.add(b_echo_worklist);
 
         l_status_worklist.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         l_status_worklist.setEnabled(false);

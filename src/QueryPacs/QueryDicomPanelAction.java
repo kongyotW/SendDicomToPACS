@@ -41,10 +41,10 @@ public class QueryDicomPanelAction implements ActionListener {
     }
 
     private boolean queryBySeries() {       
-        queryPanel.gettxtA_searchResult().setText("");
-        if(queryPanel.gettxt_queryModality().getText().equals("") ||
+        queryPanel.getTxt_Status().setText("");
+        if(queryPanel.getTxt_queryModality().getText().equals("") ||
             queryPanel.gettxt_querySerieUID().getText().equals("")) {
-            queryPanel.gettxtA_searchResult().append("Please Check Your Inputs");
+            queryPanel.getTxt_Status().setText("Please Check Your Inputs");
             return false;
         }
         
@@ -66,7 +66,7 @@ public class QueryDicomPanelAction implements ActionListener {
         dcmqr.addReturnKey(new int[]{Tag.PatientName});
         dcmqr.addReturnKey(new int[]{Tag.SeriesInstanceUID});
         
-        dcmqr.addMatchingKey(new int[]{Tag.Modality},queryPanel.gettxt_queryModality().getText()); 
+        dcmqr.addMatchingKey(new int[]{Tag.Modality},queryPanel.getTxt_queryModality().getText()); 
         dcmqr.addMatchingKey(new int[]{Tag.SeriesInstanceUID},queryPanel.gettxt_querySerieUID().getText()); 
         
         dcmqr.configureTransferCapability(true);
@@ -77,11 +77,11 @@ public class QueryDicomPanelAction implements ActionListener {
             dcmqr.open();
             result = dcmqr.query();   
 //            System.out.println(result);//result.get(i) 
-            queryPanel.gettxtA_searchResult().append(result.toString());
+//            queryPanel.getTxt_Status().append(result.toString());
             if(result.size() > 0){
                 isFound = true;                
             }
-            queryPanel.gettxtA_searchResult().append("Result Size : " + result.size());
+            queryPanel.getTxt_Status().setText("Result Size : " + result.size());
 //            for(int i = 0;i<result.size();i++){       
 //                DicomObject data_SPS = result.get(i).getNestedDicomObject(Tag.ScheduledProcedureStepSequence);
 //                DicomObject data_RPS = result.get(i).getNestedDicomObject(Tag.RequestedProcedureCodeSequence);

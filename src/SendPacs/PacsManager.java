@@ -91,6 +91,7 @@ public class PacsManager {
             dcmEcho.open();
             dcmPacsStatus = true;
             dcmEcho.close();
+            System.out.println("Echo OK");
             return dcmPacsStatus;
         } catch (IOException ex) {
             System.out.println("ERR Connection #1= " + ex.getMessage());
@@ -114,9 +115,10 @@ public class PacsManager {
 
         boolean dcmPacsStatus = false;
         try {
-            dcmEcho.open();
+            dcmEcho.open();            
             dcmPacsStatus = true;
-            dcmEcho.close();
+            dcmEcho.close();            
+            System.out.println("Echo OK");
             return dcmPacsStatus;
         } catch (IOException ex) {
             System.out.println("ERR Connection #1= " + ex.getMessage());

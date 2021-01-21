@@ -9,6 +9,7 @@ import SendPacs.InfoPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import org.dcm4che2.data.DicomObject;
 import org.dcm4che2.data.Tag;
@@ -26,7 +27,8 @@ public class QueryWorklistPanelAction implements ActionListener{
 
     public QueryWorklistPanelAction(QueryWorklistPanel queryWorklistPanel, InfoPanel infoPanel) {
         this.queryWorklistPanel = queryWorklistPanel;
-        this.infoPanel = infoPanel;
+        this.infoPanel = infoPanel;        
+//        System.out.println(LocalDate.now());
     }
 
     @Override
@@ -76,7 +78,7 @@ public class QueryWorklistPanelAction implements ActionListener{
      
 //        String dateRange = this.getSearchStartDate() + "-" + this.getSearchEndDate();
         String dateRange = queryWorklistPanel.gettxt_queryDate().getText();
-        System.out.println("Range date : " + dateRange);        
+//        System.out.println("Range date : " + dateRange);        
 //        dcmmwl.addSpsMatchingKey(Tag.ScheduledProcedureStepStartDate, "*");
         dcmmwl.addSpsMatchingKey(Tag.ScheduledProcedureStepStartDate, dateRange);
 //        dcmmwl.addSpsMatchingKey(Tag.ScheduledProcedureStepEndDate, this.getSearchEndDate());  
@@ -114,7 +116,8 @@ public class QueryWorklistPanelAction implements ActionListener{
         List<DicomObject> result = null;
         try {
             result = dcmmwl.query();
-            System.out.println("Sense number of modality : " + result.size());           
+            System.out.println("Sense number of modality : " + result.size()); 
+            queryWorklistPanel.getText_Status().setText("Sense number of modality : " + result.size());
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

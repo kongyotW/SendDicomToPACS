@@ -24,7 +24,7 @@ public class TextAreaLogProgram extends JFrame {
     private PrintStream standardOut;
      
     public TextAreaLogProgram() {
-        super("Demo printing to JTextArea");        
+        super("Output Logging");        
         
         textArea = new JTextArea(50, 10);
         textArea.setEditable(false);

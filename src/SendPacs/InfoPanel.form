@@ -157,9 +157,9 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="b_echo_pacs">
+            <Component class="javax.swing.JButton" name="b_ping_pacs">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Echo"/>
+                <Property name="text" type="java.lang.String" value="Ping"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[120, 36]"/>
                 </Property>
@@ -171,9 +171,9 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="b_ping_pacs">
+            <Component class="javax.swing.JButton" name="b_echo_pacs">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ping"/>
+                <Property name="text" type="java.lang.String" value="Echo"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[120, 36]"/>
                 </Property>
@@ -336,9 +336,9 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="b_echo_worklist">
+            <Component class="javax.swing.JButton" name="b_ping_worklist">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Echo"/>
+                <Property name="text" type="java.lang.String" value="Ping"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[120, 36]"/>
                 </Property>
@@ -350,9 +350,9 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="b_ping_worklist">
+            <Component class="javax.swing.JButton" name="b_echo_worklist">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ping"/>
+                <Property name="text" type="java.lang.String" value="Echo"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[120, 36]"/>
                 </Property>

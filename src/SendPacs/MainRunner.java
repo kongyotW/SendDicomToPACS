@@ -5,6 +5,7 @@
  */
 package SendPacs;
 
+import LogDisplay.TextAreaLogProgram;
 import ProgramConfig.Configuration;
 import QueryPacs.QueryDicomPanel;
 import QueryPacs.QueryDicomPanelAction;
@@ -104,5 +105,7 @@ public class MainRunner {
 //        System.out.println("isPACSAvaliable : " + isPACSAvaliable);
 //                
 //        System.exit(0);
+        JFrame logFrame = new TextAreaLogProgram();
+        logFrame.setVisible(true);
     }
 }
