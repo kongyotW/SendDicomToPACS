@@ -65,7 +65,7 @@ public class MainRunner {
 //            public void run() {
 //                new TextAreaLogProgram().setVisible(true);
 //            }
-//        });
+//        });        
         InfoPanel infoPanel = new InfoPanel();
         InfoPanelAction infoPanelAction = new InfoPanelAction(infoPanel);
         infoPanelAction.setupButtonAction();
@@ -104,8 +104,7 @@ public class MainRunner {
 //        boolean isPACSAvaliable = sendToPac.isPACSisAvaliable();
 //        System.out.println("isPACSAvaliable : " + isPACSAvaliable);
 //                
-//        System.exit(0);
-        JFrame logFrame = new TextAreaLogProgram();
-        logFrame.setVisible(true);
+//        System.exit(0);        
+        
     }
 }

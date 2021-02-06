@@ -17,11 +17,14 @@ public class CustomOutputStream extends OutputStream {
     }
 
     @Override
-    public void write(int b) throws IOException {        
+    public void write(int b) throws IOException {   
+//        if(!this.textArea.isVisible()) return;
+        
         textArea.append(String.valueOf((char)b));        
         // scrolls the text area to the end of data
         textArea.setCaretPosition(textArea.getDocument().getLength());
         // keeps the textArea up to date
-        textArea.update(textArea.getGraphics());
+        textArea.repaint();
+//        textArea.update(textArea.getGraphics());
     }
 }

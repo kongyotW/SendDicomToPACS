@@ -5,9 +5,11 @@
  */
 package SendPacs;
 
+import LogDisplay.TextAreaLogProgram;
 import ProgramConfig.ConfigConstant;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 
 /**
  *
@@ -16,7 +18,8 @@ import java.awt.event.ActionListener;
 public class InfoPanelAction implements ActionListener{
 
     private final InfoPanel infoPanel;
-
+    private final JFrame logFrame = new TextAreaLogProgram();        
+    
     public InfoPanelAction(InfoPanel infoPanel) {
         this.infoPanel = infoPanel;
         this.setPanelInformation();
@@ -57,7 +60,13 @@ public class InfoPanelAction implements ActionListener{
             boolean isConnectOK = PacsManager.getInstance().isWorklistisAvaliable();            
             if(isConnectOK) infoPanel.getL_status_worklist().setText("Echo OK");
             else infoPanel.getL_status_worklist().setText("Echo Fail!");
-         }                 
+         }else if(ae.getActionCommand().equals("ToggleB_Debug")){
+             if(infoPanel.getTbutton_debug().isSelected()){
+                 logFrame.setVisible(true);
+             }else{
+                 logFrame.setVisible(false);
+             }
+         }     
     }
     
     public void setupButtonAction(){
@@ -72,6 +81,9 @@ public class InfoPanelAction implements ActionListener{
         
         infoPanel.getB_echo_worklist().setActionCommand("B_Echo_Worklist");
         infoPanel.getB_echo_worklist().addActionListener(this);
+        
+        infoPanel.getTbutton_debug().setActionCommand("ToggleB_Debug");
+        infoPanel.getTbutton_debug().addActionListener(this);
     }
     
     

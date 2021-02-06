@@ -12,6 +12,13 @@ package SendPacs;
 public class InfoPanel extends javax.swing.JPanel {
 
     /**
+     * @return the tbutton_debug
+     */
+    public javax.swing.JToggleButton getTbutton_debug() {
+        return tbutton_debug;
+    }
+
+    /**
      * @return the l_status_pacs
      */
     public javax.swing.JLabel getL_status_pacs() {
@@ -94,6 +101,7 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_portWorkstation = new javax.swing.JTextField();
         l_teethNo3 = new javax.swing.JLabel();
         txt_aeWorkstation = new javax.swing.JTextField();
+        tbutton_debug = new javax.swing.JToggleButton();
 
         setMinimumSize(new java.awt.Dimension(750, 250));
         setPreferredSize(new java.awt.Dimension(750, 250));
@@ -295,6 +303,9 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_aeWorkstation.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel10.add(txt_aeWorkstation);
 
+        tbutton_debug.setText("show debug ");
+        jPanel10.add(tbutton_debug);
+
         p_workstationInfo.add(jPanel10);
 
         add(p_workstationInfo);
@@ -323,6 +334,7 @@ public class InfoPanel extends javax.swing.JPanel {
     private javax.swing.JPanel p_pacsInfo;
     private javax.swing.JPanel p_worklistInfo;
     private javax.swing.JPanel p_workstationInfo;
+    private javax.swing.JToggleButton tbutton_debug;
     private javax.swing.JTextField txt_aePACS;
     private javax.swing.JTextField txt_aeWorklist;
     private javax.swing.JTextField txt_aeWorkstation;

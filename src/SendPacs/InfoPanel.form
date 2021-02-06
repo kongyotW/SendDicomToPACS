@@ -515,6 +515,11 @@
                 </Property>
               </Properties>
             </Component>
+            <Component class="javax.swing.JToggleButton" name="tbutton_debug">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="show debug "/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
