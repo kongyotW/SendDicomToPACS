@@ -13,6 +13,10 @@ import javax.swing.JTextField;
  */
 public class QueryDicomPanel extends javax.swing.JPanel {
 
+    public javax.swing.JTextField getTxt_queryHN() {
+        return txt_queryHN;
+    }
+
     /**
      * @return the txt_queryModality
      */
@@ -32,7 +36,7 @@ public class QueryDicomPanel extends javax.swing.JPanel {
     }
     
     public JTextField gettxt_querySerieUID(){
-        return txt_queryInput;
+        return txt_querySerieUID;
     }
     
     /**
@@ -53,8 +57,10 @@ public class QueryDicomPanel extends javax.swing.JPanel {
 
         jPanel9 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        txt_queryHN = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txt_queryInput = new javax.swing.JTextField();
+        txt_querySerieUID = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txt_queryModality = new javax.swing.JTextField();
@@ -74,12 +80,20 @@ public class QueryDicomPanel extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
+        jLabel3.setText("HN : ");
+        jPanel1.add(jLabel3);
+
+        txt_queryHN.setMinimumSize(new java.awt.Dimension(80, 20));
+        txt_queryHN.setPreferredSize(new java.awt.Dimension(80, 20));
+        jPanel1.add(txt_queryHN);
+
         jLabel1.setText("SerieUID : ");
         jPanel1.add(jLabel1);
 
-        txt_queryInput.setMinimumSize(new java.awt.Dimension(250, 20));
-        txt_queryInput.setPreferredSize(new java.awt.Dimension(250, 20));
-        jPanel1.add(txt_queryInput);
+        txt_querySerieUID.setText("*");
+        txt_querySerieUID.setMinimumSize(new java.awt.Dimension(250, 20));
+        txt_querySerieUID.setPreferredSize(new java.awt.Dimension(250, 20));
+        jPanel1.add(txt_querySerieUID);
 
         jPanel9.add(jPanel1);
 
@@ -124,7 +138,7 @@ public class QueryDicomPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 488, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -150,13 +164,15 @@ public class QueryDicomPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel p_ExitProgram;
     private javax.swing.JTextField text_Status;
-    private javax.swing.JTextField txt_queryInput;
+    private javax.swing.JTextField txt_queryHN;
     private javax.swing.JTextField txt_queryModality;
+    private javax.swing.JTextField txt_querySerieUID;
     // End of variables declaration//GEN-END:variables
 }

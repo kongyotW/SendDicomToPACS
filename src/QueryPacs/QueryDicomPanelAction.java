@@ -43,13 +43,14 @@ public class QueryDicomPanelAction implements ActionListener {
     private boolean queryBySeries() {       
         queryPanel.getTxt_Status().setText("");
         if(queryPanel.getTxt_queryModality().getText().equals("") ||
-            queryPanel.gettxt_querySerieUID().getText().equals("")) {
-            queryPanel.getTxt_Status().setText("Please Check Your Inputs");
+            queryPanel.gettxt_querySerieUID().getText().equals("") ||
+            queryPanel.getTxt_queryHN().getText().equals("")) {
+            queryPanel.getTxt_Status().setText("Please Fill Query Input");
             return false;
         }
         
         boolean isFound = false;
-        DcmQR dcmqr = new DcmQR("DcmQR");
+        DcmQR dcmqr = new DcmQR("MIS");
         dcmqr.setCalledAET(infoPanel.getTxt_aePACS().getText(), true);
         dcmqr.setRemoteHost(infoPanel.getTxt_ipPACS().getText());
         dcmqr.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
@@ -57,7 +58,7 @@ public class QueryDicomPanelAction implements ActionListener {
 //        dcmqr.setLocalHost("192.168.39.219");
 //        dcmqr.setLocalPort(104);
         
-        dcmqr.getKeys();
+//        dcmqr.getKeys();
         dcmqr.setDateTimeMatching(true);
         dcmqr.setCFind(true);
                 
@@ -68,6 +69,7 @@ public class QueryDicomPanelAction implements ActionListener {
         
         dcmqr.addMatchingKey(new int[]{Tag.Modality},queryPanel.getTxt_queryModality().getText()); 
         dcmqr.addMatchingKey(new int[]{Tag.SeriesInstanceUID},queryPanel.gettxt_querySerieUID().getText()); 
+        dcmqr.addMatchingKey(new int[]{Tag.PatientID},queryPanel.getTxt_queryHN().getText()); 
         
         dcmqr.configureTransferCapability(true);
 
