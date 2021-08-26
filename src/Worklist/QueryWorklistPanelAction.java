@@ -49,30 +49,30 @@ public class QueryWorklistPanelAction implements ActionListener{
         dcmmwl.setRemoteHost(infoPanel.getTxt_ipPACS().getText());
         dcmmwl.setRemotePort(Integer.parseInt(infoPanel.getTxt_portPACS().getText()));
         
-        String[] returnKey = new String[17];
-        returnKey [0] = "OtherPatientNames";  
-        returnKey [1] = "InstitutionName"; 
-        returnKey [2] = "InstitutionAddress"; 
-        returnKey [3] = "PatientAddress";
-        returnKey [4] = "PatientComments";
-        returnKey [5] = "PatientTelephoneNumbers";
-        returnKey [6] = "ReferringPhysicianTelephoneNumbers";
-        returnKey [7] = "StudyID";
-        returnKey [8] = "StudyDate";
-        returnKey [9] = "SeriesDate";
-        returnKey [10] = "SeriesTime";
-        returnKey [11] = "StudyTime";
-        returnKey [12] = "StudyDescription";
-        returnKey [13] = "SeriesInstanceUID";
-        returnKey [14] = "SOPClassUID";
-        returnKey [15] = "SOPInstanceUID";
-        returnKey [16] = "PatientAge";       
-        if (returnKey != null){
-            for (int k = 0;k < returnKey.length; k++){
-                dcmmwl.addReturnKey(Tag.toTagPath(returnKey[k]));
-            }
-            returnKey = null;
-        }        
+//        String[] returnKey = new String[17];
+//        returnKey [0] = "OtherPatientNames";  
+//        returnKey [1] = "InstitutionName"; 
+//        returnKey [2] = "InstitutionAddress"; 
+//        returnKey [3] = "PatientAddress";
+//        returnKey [4] = "PatientComments";
+//        returnKey [5] = "PatientTelephoneNumbers";
+//        returnKey [6] = "ReferringPhysicianTelephoneNumbers";
+//        returnKey [7] = "StudyID";
+//        returnKey [8] = "StudyDate";
+//        returnKey [9] = "SeriesDate";
+//        returnKey [10] = "SeriesTime";
+//        returnKey [11] = "StudyTime";
+//        returnKey [12] = "StudyDescription";
+//        returnKey [13] = "SeriesInstanceUID";
+//        returnKey [14] = "SOPClassUID";
+//        returnKey [15] = "SOPInstanceUID";
+//        returnKey [16] = "PatientAge";       
+//        if (returnKey != null){
+//            for (int k = 0;k < returnKey.length; k++){
+//                dcmmwl.addReturnKey(Tag.toTagPath(returnKey[k]));
+//            }
+//            returnKey = null;
+//        }        
         dcmmwl.addSpsMatchingKey(Tag.Modality, queryWorklistPanel.gettxt_queryModality().getText());
      
 //        String dateRange = this.getSearchStartDate() + "-" + this.getSearchEndDate();
@@ -101,8 +101,8 @@ public class QueryWorklistPanelAction implements ActionListener{
 //                }
 //            }
 //        }
-        dcmmwl.setPackPDV(false);
-        dcmmwl.setTcpNoDelay(false);
+//        dcmmwl.setPackPDV(false);
+//        dcmmwl.setTcpNoDelay(false);
         String[] LE_TS = {UID.ExplicitVRLittleEndian, UID.ImplicitVRLittleEndian };
         dcmmwl.setTransferSyntax(LE_TS);
 
