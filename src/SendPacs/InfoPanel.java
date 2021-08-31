@@ -71,17 +71,6 @@ public class InfoPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        p_pacsInfo = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        l_PleaseSpe = new javax.swing.JLabel();
-        txt_ipPACS = new javax.swing.JTextField();
-        l_PleaseSpe1 = new javax.swing.JLabel();
-        txt_portPACS = new javax.swing.JTextField();
-        l_teethNo = new javax.swing.JLabel();
-        txt_aePACS = new javax.swing.JTextField();
-        b_ping_pacs = new javax.swing.JButton();
-        b_echo_pacs = new javax.swing.JButton();
-        l_status_pacs = new javax.swing.JLabel();
         p_worklistInfo = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         l_PleaseSpe2 = new javax.swing.JLabel();
@@ -93,6 +82,17 @@ public class InfoPanel extends javax.swing.JPanel {
         b_ping_worklist = new javax.swing.JButton();
         b_echo_worklist = new javax.swing.JButton();
         l_status_worklist = new javax.swing.JLabel();
+        p_pacsInfo = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        l_PleaseSpe = new javax.swing.JLabel();
+        txt_ipPACS = new javax.swing.JTextField();
+        l_PleaseSpe1 = new javax.swing.JLabel();
+        txt_portPACS = new javax.swing.JTextField();
+        l_teethNo = new javax.swing.JLabel();
+        txt_aePACS = new javax.swing.JTextField();
+        b_ping_pacs = new javax.swing.JButton();
+        b_echo_pacs = new javax.swing.JButton();
+        l_status_pacs = new javax.swing.JLabel();
         p_workstationInfo = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         l_PleaseSpe6 = new javax.swing.JLabel();
@@ -102,83 +102,6 @@ public class InfoPanel extends javax.swing.JPanel {
         l_teethNo3 = new javax.swing.JLabel();
         txt_aeWorkstation = new javax.swing.JTextField();
         tbutton_debug = new javax.swing.JToggleButton();
-
-        setMinimumSize(new java.awt.Dimension(750, 250));
-        setPreferredSize(new java.awt.Dimension(750, 250));
-        setLayout(new java.awt.GridLayout(3, 0));
-
-        p_pacsInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PACS Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
-        p_pacsInfo.setMaximumSize(new java.awt.Dimension(32767, 150));
-        p_pacsInfo.setMinimumSize(new java.awt.Dimension(500, 150));
-        p_pacsInfo.setPreferredSize(new java.awt.Dimension(272, 150));
-        p_pacsInfo.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
-        jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
-        l_PleaseSpe.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        l_PleaseSpe.setText("IP Address :");
-        l_PleaseSpe.setEnabled(false);
-        l_PleaseSpe.setMaximumSize(new java.awt.Dimension(70, 25));
-        l_PleaseSpe.setMinimumSize(new java.awt.Dimension(70, 25));
-        l_PleaseSpe.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel8.add(l_PleaseSpe);
-
-        txt_ipPACS.setMaximumSize(new java.awt.Dimension(90, 36));
-        txt_ipPACS.setMinimumSize(new java.awt.Dimension(90, 36));
-        txt_ipPACS.setPreferredSize(new java.awt.Dimension(90, 36));
-        txt_ipPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel8.add(txt_ipPACS);
-
-        l_PleaseSpe1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        l_PleaseSpe1.setText("Port :");
-        l_PleaseSpe1.setEnabled(false);
-        l_PleaseSpe1.setMaximumSize(new java.awt.Dimension(30, 25));
-        l_PleaseSpe1.setMinimumSize(new java.awt.Dimension(30, 25));
-        l_PleaseSpe1.setPreferredSize(new java.awt.Dimension(30, 25));
-        jPanel8.add(l_PleaseSpe1);
-
-        txt_portPACS.setMaximumSize(new java.awt.Dimension(70, 36));
-        txt_portPACS.setMinimumSize(new java.awt.Dimension(70, 36));
-        txt_portPACS.setPreferredSize(new java.awt.Dimension(70, 36));
-        txt_portPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel8.add(txt_portPACS);
-
-        l_teethNo.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        l_teethNo.setText("AE Title :");
-        l_teethNo.setEnabled(false);
-        l_teethNo.setMaximumSize(new java.awt.Dimension(60, 25));
-        l_teethNo.setMinimumSize(new java.awt.Dimension(60, 25));
-        l_teethNo.setPreferredSize(new java.awt.Dimension(60, 25));
-        jPanel8.add(l_teethNo);
-
-        txt_aePACS.setMaximumSize(new java.awt.Dimension(120, 36));
-        txt_aePACS.setMinimumSize(new java.awt.Dimension(120, 36));
-        txt_aePACS.setPreferredSize(new java.awt.Dimension(120, 36));
-        txt_aePACS.setSelectionColor(new java.awt.Color(0, 0, 0));
-        jPanel8.add(txt_aePACS);
-
-        b_ping_pacs.setText("Ping");
-        b_ping_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_ping_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_ping_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
-        jPanel8.add(b_ping_pacs);
-
-        b_echo_pacs.setText("Echo");
-        b_echo_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_echo_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_echo_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
-        jPanel8.add(b_echo_pacs);
-
-        l_status_pacs.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        l_status_pacs.setEnabled(false);
-        l_status_pacs.setMaximumSize(new java.awt.Dimension(80, 25));
-        l_status_pacs.setMinimumSize(new java.awt.Dimension(80, 25));
-        l_status_pacs.setPreferredSize(new java.awt.Dimension(80, 25));
-        jPanel8.add(l_status_pacs);
-
-        p_pacsInfo.add(jPanel8);
-
-        add(p_pacsInfo);
 
         p_worklistInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Worklist Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
         p_worklistInfo.setMaximumSize(new java.awt.Dimension(32767, 150));
@@ -251,7 +174,85 @@ public class InfoPanel extends javax.swing.JPanel {
 
         p_worklistInfo.add(jPanel11);
 
-        add(p_worklistInfo);
+        setMinimumSize(new java.awt.Dimension(750, 170));
+        setPreferredSize(new java.awt.Dimension(750, 170));
+        setLayout(new java.awt.GridLayout(2, 0));
+
+        p_pacsInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PACS Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
+        p_pacsInfo.setMaximumSize(new java.awt.Dimension(32767, 150));
+        p_pacsInfo.setMinimumSize(new java.awt.Dimension(500, 150));
+        p_pacsInfo.setPreferredSize(new java.awt.Dimension(272, 150));
+        p_pacsInfo.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        l_PleaseSpe.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        l_PleaseSpe.setText("IP Address :");
+        l_PleaseSpe.setEnabled(false);
+        l_PleaseSpe.setMaximumSize(new java.awt.Dimension(70, 25));
+        l_PleaseSpe.setMinimumSize(new java.awt.Dimension(70, 25));
+        l_PleaseSpe.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel8.add(l_PleaseSpe);
+
+        txt_ipPACS.setEditable(false);
+        txt_ipPACS.setMaximumSize(new java.awt.Dimension(90, 36));
+        txt_ipPACS.setMinimumSize(new java.awt.Dimension(90, 36));
+        txt_ipPACS.setPreferredSize(new java.awt.Dimension(90, 36));
+        txt_ipPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel8.add(txt_ipPACS);
+
+        l_PleaseSpe1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        l_PleaseSpe1.setText("Port :");
+        l_PleaseSpe1.setEnabled(false);
+        l_PleaseSpe1.setMaximumSize(new java.awt.Dimension(30, 25));
+        l_PleaseSpe1.setMinimumSize(new java.awt.Dimension(30, 25));
+        l_PleaseSpe1.setPreferredSize(new java.awt.Dimension(30, 25));
+        jPanel8.add(l_PleaseSpe1);
+
+        txt_portPACS.setEditable(false);
+        txt_portPACS.setMaximumSize(new java.awt.Dimension(70, 36));
+        txt_portPACS.setMinimumSize(new java.awt.Dimension(70, 36));
+        txt_portPACS.setPreferredSize(new java.awt.Dimension(70, 36));
+        txt_portPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel8.add(txt_portPACS);
+
+        l_teethNo.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        l_teethNo.setText("AE Title :");
+        l_teethNo.setEnabled(false);
+        l_teethNo.setMaximumSize(new java.awt.Dimension(60, 25));
+        l_teethNo.setMinimumSize(new java.awt.Dimension(60, 25));
+        l_teethNo.setPreferredSize(new java.awt.Dimension(60, 25));
+        jPanel8.add(l_teethNo);
+
+        txt_aePACS.setEditable(false);
+        txt_aePACS.setMaximumSize(new java.awt.Dimension(120, 36));
+        txt_aePACS.setMinimumSize(new java.awt.Dimension(120, 36));
+        txt_aePACS.setPreferredSize(new java.awt.Dimension(120, 36));
+        txt_aePACS.setSelectionColor(new java.awt.Color(0, 0, 0));
+        jPanel8.add(txt_aePACS);
+
+        b_ping_pacs.setText("Ping");
+        b_ping_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
+        b_ping_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
+        b_ping_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
+        jPanel8.add(b_ping_pacs);
+
+        b_echo_pacs.setText("Echo");
+        b_echo_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
+        b_echo_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
+        b_echo_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
+        jPanel8.add(b_echo_pacs);
+
+        l_status_pacs.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        l_status_pacs.setEnabled(false);
+        l_status_pacs.setMaximumSize(new java.awt.Dimension(80, 25));
+        l_status_pacs.setMinimumSize(new java.awt.Dimension(80, 25));
+        l_status_pacs.setPreferredSize(new java.awt.Dimension(80, 25));
+        jPanel8.add(l_status_pacs);
+
+        p_pacsInfo.add(jPanel8);
+
+        add(p_pacsInfo);
 
         p_workstationInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Workstation Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
         p_workstationInfo.setMaximumSize(new java.awt.Dimension(32767, 150));
@@ -269,6 +270,7 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe6.setPreferredSize(new java.awt.Dimension(70, 25));
         jPanel10.add(l_PleaseSpe6);
 
+        txt_ipWorkstation.setEditable(false);
         txt_ipWorkstation.setMaximumSize(new java.awt.Dimension(90, 36));
         txt_ipWorkstation.setMinimumSize(new java.awt.Dimension(90, 36));
         txt_ipWorkstation.setPreferredSize(new java.awt.Dimension(90, 36));
@@ -283,6 +285,7 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe7.setPreferredSize(new java.awt.Dimension(30, 25));
         jPanel10.add(l_PleaseSpe7);
 
+        txt_portWorkstation.setEditable(false);
         txt_portWorkstation.setMaximumSize(new java.awt.Dimension(70, 36));
         txt_portWorkstation.setMinimumSize(new java.awt.Dimension(70, 36));
         txt_portWorkstation.setPreferredSize(new java.awt.Dimension(70, 36));
@@ -297,6 +300,7 @@ public class InfoPanel extends javax.swing.JPanel {
         l_teethNo3.setPreferredSize(new java.awt.Dimension(60, 25));
         jPanel10.add(l_teethNo3);
 
+        txt_aeWorkstation.setEditable(false);
         txt_aeWorkstation.setMaximumSize(new java.awt.Dimension(120, 36));
         txt_aeWorkstation.setMinimumSize(new java.awt.Dimension(120, 36));
         txt_aeWorkstation.setPreferredSize(new java.awt.Dimension(120, 36));

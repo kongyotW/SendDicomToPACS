@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import javax.swing.JFileChooser;
 import javax.swing.JTable;
@@ -26,6 +27,8 @@ public class DicomListPanelAction implements ActionListener{
     public DicomListPanelAction(DicomListPanel dicomListPanel) {
         this.dicomListPanel = dicomListPanel;
         this.tableDicomModel = new TableDicomModel();
+        
+        dicomListPanel.getB_send().setEnabled(false);
     }
     
     public void setupButtonAction(){       
@@ -35,22 +38,32 @@ public class DicomListPanelAction implements ActionListener{
         dicomListPanel.getB_send().setActionCommand("SendDICOM");
         dicomListPanel.getB_send().addActionListener(this);
     }
-    
+                
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getActionCommand().equals("SelectDCM")){            
-            JFileChooser chooser= new JFileChooser();    
-            chooser.setMultiSelectionEnabled(true);
-            chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            int choice = chooser.showOpenDialog(null);
+        if(ae.getActionCommand().equals("SelectDCM")){    
+            String userDir = System.getProperty("user.home");
+            JFileChooser chooser= new JFileChooser(userDir +"/Desktop");    
+            chooser.setMultiSelectionEnabled(false);
+            chooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+            
+            int choice = chooser.showOpenDialog(dicomListPanel);
             if (choice != JFileChooser.APPROVE_OPTION) {
                 return;
-            }            
-//            File chosenFile = chooser.getSelectedFile();        
-            File[] selectedFiles = chooser.getSelectedFiles();
-            
+            }                       
+            Collection<File> dicomFiles = null;
+            File selectedFiles = chooser.getSelectedFile();
+            if(selectedFiles.isDirectory()){
+                dicomFiles = org.apache.commons.io.FileUtils
+                    .listFiles(selectedFiles.getAbsoluteFile(), new String[]{"dcm"}, true);
+            }else{
+                if(selectedFiles.getName().endsWith(".dcm")){
+                    dicomFiles = new ArrayList();
+                    dicomFiles.add(selectedFiles);
+                }
+            }              
             //Setup DataStructor...
-            setupDataStructor(selectedFiles);
+            setupDataStructor(dicomFiles);
             tableDicomModel.setDataTable();
             
             JTable table = this.dicomListPanel.getDataTable(); 
@@ -69,40 +82,66 @@ public class DicomListPanelAction implements ActionListener{
             table.getColumnModel().getColumn(2).setMinWidth(80);
             table.getColumnModel().getColumn(2).setMaxWidth(80); 
             table.revalidate();
-            table.repaint();
+            table.repaint();     
             
-        }else if(ae.getActionCommand().equals("SendDICOM")){
-            ArrayList<String> dicomPathList = DicomListDataStruct.getInstance().getDicomList();
-            for(int i=0; i<dicomPathList.size();i++){
-                String dicomPath = dicomPathList.get(i);
-                File fileToSend = new File(dicomPath);
-                if(fileToSend.exists()){
-                    HashMap dicomMapper = DicomListDataStruct.getInstance().getModeCtInfoHash();
-                    System.out.println("fPath To Send : " + dicomPathList.get(i));
-                             
-                    boolean isSendComplete = false;
-                    if(ConfigConstant.PACS_CONECTION_INFO.IS_SEND_WITH_COMMIT){
-                        isSendComplete = PacsManager.getInstance().sendDICOMToPACSWithCommit(fileToSend);
-                    }else{
-                        isSendComplete = PacsManager.getInstance().sendDICOMToPACS(fileToSend);
-                    }                    
-                    
-                    if(isSendComplete){
-                        dicomMapper.put(dicomPath, DicomListDataStruct.Status_Complete);
-                    }else{
-                        dicomMapper.put(dicomPath, DicomListDataStruct.Status_Fail);
-                    }
-                    System.out.println("isSendComplete : " + isSendComplete);
-                }                
+            if(DicomListDataStruct.getInstance().getDicomList().size() > 0){
+                dicomListPanel.getB_send().setEnabled(true);
             }
-            tableDicomModel.setDataTable();
-            this.dicomListPanel.getDataTable().revalidate();
-            this.dicomListPanel.getDataTable().repaint();   
+        }else if(ae.getActionCommand().equals("SendDICOM")){
+            Thread t1 =new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    dicomListPanel.getB_select_dicom().setEnabled(false);
+                    dicomListPanel.getB_send().setEnabled(false);
+                    
+                    ArrayList<String> dicomPathList = DicomListDataStruct.getInstance().getDicomList();
+                    int successCouter = 0;
+                    int numOfAllFile = dicomPathList.size();
+                    for(int i=0; i<numOfAllFile;i++){
+                        String dicomPath = dicomPathList.get(i);
+                        File fileToSend = new File(dicomPath);
+                        if(fileToSend.exists()){
+                            HashMap dicomMapper = DicomListDataStruct.getInstance().getModeCtInfoHash();
+//                            System.out.println("fPath To Send : " + dicomPathList.get(i));
+
+                            boolean isSendComplete = false;                            
+                            if(dicomMapper.get(dicomPath).equals(DicomListDataStruct.Status_Complete)){
+                                //Skip Previous sending
+                                isSendComplete = true;
+                            }else{
+                                if(ConfigConstant.PACS_CONECTION_INFO.IS_SEND_WITH_COMMIT){
+                                    isSendComplete = PacsManager.getInstance().sendDICOMToPACSWithCommit(fileToSend);
+                                }else{
+                                    isSendComplete = PacsManager.getInstance().sendDICOMToPACS(fileToSend);
+                                }
+                            }
+                            
+                            if(isSendComplete){
+                                dicomMapper.put(dicomPath, DicomListDataStruct.Status_Complete);
+                                successCouter++;
+                            }else{
+                                dicomMapper.put(dicomPath, DicomListDataStruct.Status_Fail);
+                            }
+                            
+                            dicomListPanel.setTextStatus("Complete ["+ successCouter + "|" +numOfAllFile +"]");
+                            
+                            System.out.println("isSendComplete : " + isSendComplete);
+                            tableDicomModel.setDataTable();
+                            dicomListPanel.getDataTable().revalidate();
+                            dicomListPanel.getDataTable().repaint();  
+                        }                
+                    }
+                     
+                    dicomListPanel.getB_select_dicom().setEnabled(true);
+                    dicomListPanel.getB_send().setEnabled(true);
+                }
+            });
+            t1.start();            
         }
     }
     
-    private void setupDataStructor(File[] selectedFiles){
-        for(File f : selectedFiles){
+    private void setupDataStructor(Collection<File> selectedDicomFiles){
+        for(File f : selectedDicomFiles){
             String fPath = f.getPath();                
             System.out.println("fPath : " + fPath);
             HashMap dicomMapper = DicomListDataStruct.getInstance().getModeCtInfoHash();

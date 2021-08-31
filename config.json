@@ -12,7 +12,5 @@
         "WORKLIST_IP": "127.0.0.1",
         "WORKLIST_AE": "DCM4CHEE",
         "WORKLIST_PORT": "11112"
-    }  
-       
-    
+    }      
 }

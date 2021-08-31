@@ -53,6 +53,7 @@ public class TableDicomModel extends AbstractTableModel {
                 }
                  
                 cacheResult.add(row);
+                counter++;
             }            
         } catch (Exception e) {
             System.out.println("Error Id card is " + e.getMessage());
