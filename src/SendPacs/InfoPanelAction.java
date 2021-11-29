@@ -24,9 +24,9 @@ public class InfoPanelAction implements ActionListener{
         this.infoPanel = infoPanel;
         this.setPanelInformation();
         
-        infoPanel.getB_echo_pacs().setVisible(false);
-        infoPanel.getB_ping_pacs().setVisible(false);
-        infoPanel.getTbutton_debug().setVisible(false);
+//        infoPanel.getB_echo_pacs().setVisible(false);
+//        infoPanel.getB_ping_pacs().setVisible(false);
+//        infoPanel.getTbutton_debug().setVisible(false);
     }
         
     private void setPanelInformation(){

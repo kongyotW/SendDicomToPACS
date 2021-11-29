@@ -90,7 +90,7 @@ public class MainRunner {
         southPanel.getTab_pane().addTab("Query Worklist", queryWorklistPanel);
         southPanel.getTab_pane().addTab("Query DICOM", queryDicomPanel);
         
-//        mainPanel.add(southPanel, BorderLayout.SOUTH);        
+        mainPanel.add(southPanel, BorderLayout.SOUTH);        
         PacsManager.getInstance().setupInfoPanel(infoPanel);
         
         JDialog mainDialog = new JDialog();
