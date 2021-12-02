@@ -120,6 +120,7 @@ public class QueryWorklistPanel extends javax.swing.JPanel {
         jLabel19.setPreferredSize(new java.awt.Dimension(60, 18));
         p_ExitProgram.add(jLabel19);
 
+        text_Status.setEditable(false);
         text_Status.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         text_Status.setMaximumSize(new java.awt.Dimension(400, 30));
         text_Status.setMinimumSize(new java.awt.Dimension(400, 30));
@@ -130,7 +131,7 @@ public class QueryWorklistPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 488, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)

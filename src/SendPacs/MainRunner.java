@@ -84,13 +84,13 @@ public class MainRunner {
                 
         MainPanel mainPanel = new MainPanel();
         mainPanel.add(infoPanel, BorderLayout.NORTH);
-        mainPanel.add(dicomListPanel, BorderLayout.CENTER);
         
         SouthPanel southPanel = new SouthPanel();
+        southPanel.getTab_pane().addTab("Send DICOM", dicomListPanel);
         southPanel.getTab_pane().addTab("Query Worklist", queryWorklistPanel);
         southPanel.getTab_pane().addTab("Query DICOM", queryDicomPanel);
         
-        mainPanel.add(southPanel, BorderLayout.SOUTH);        
+        mainPanel.add(southPanel, BorderLayout.CENTER);   
         PacsManager.getInstance().setupInfoPanel(infoPanel);
         
         JDialog mainDialog = new JDialog();
@@ -98,7 +98,7 @@ public class MainRunner {
         mainDialog.pack();
         mainDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 //        mainDialog.setModal(true);
-        mainDialog.setTitle("Send DICOM to PACS [version 0.1]");
+        mainDialog.setTitle("Send DICOM to PACS [version 0.2]");
         mainDialog.setAlwaysOnTop(true);
         mainDialog.setVisible(true);                
 //        PacsManager sendToPac = new PacsManager(infoPanel);

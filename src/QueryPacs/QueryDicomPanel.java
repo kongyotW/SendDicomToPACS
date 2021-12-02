@@ -128,6 +128,7 @@ public class QueryDicomPanel extends javax.swing.JPanel {
         jLabel19.setPreferredSize(new java.awt.Dimension(60, 18));
         p_ExitProgram.add(jLabel19);
 
+        text_Status.setEditable(false);
         text_Status.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         text_Status.setMaximumSize(new java.awt.Dimension(400, 30));
         text_Status.setMinimumSize(new java.awt.Dimension(400, 30));
