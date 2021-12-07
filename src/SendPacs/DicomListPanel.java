@@ -54,7 +54,7 @@ public class DicomListPanel extends javax.swing.JPanel {
 
         add(jPanel9, java.awt.BorderLayout.NORTH);
 
-        jPanel2.setMaximumSize(new java.awt.Dimension(500, 200));
+        jPanel2.setMaximumSize(new java.awt.Dimension(500, 500));
         jPanel2.setMinimumSize(new java.awt.Dimension(500, 200));
         jPanel2.setPreferredSize(new java.awt.Dimension(500, 200));
         jPanel2.setLayout(new java.awt.BorderLayout());

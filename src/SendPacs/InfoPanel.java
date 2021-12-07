@@ -103,8 +103,8 @@ public class InfoPanel extends javax.swing.JPanel {
         txt_aeWorkstation = new javax.swing.JTextField();
         tbutton_debug = new javax.swing.JToggleButton();
 
-        setMinimumSize(new java.awt.Dimension(750, 250));
-        setPreferredSize(new java.awt.Dimension(750, 250));
+        setMinimumSize(new java.awt.Dimension(750, 210));
+        setPreferredSize(new java.awt.Dimension(750, 210));
         setLayout(new java.awt.GridLayout(3, 0));
 
         p_pacsInfo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PACS Info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
@@ -113,6 +113,8 @@ public class InfoPanel extends javax.swing.JPanel {
         p_pacsInfo.setPreferredSize(new java.awt.Dimension(272, 150));
         p_pacsInfo.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
+        jPanel8.setMinimumSize(new java.awt.Dimension(730, 35));
+        jPanel8.setPreferredSize(new java.awt.Dimension(730, 35));
         jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         l_PleaseSpe.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -123,9 +125,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe.setPreferredSize(new java.awt.Dimension(70, 25));
         jPanel8.add(l_PleaseSpe);
 
-        txt_ipPACS.setMaximumSize(new java.awt.Dimension(90, 36));
-        txt_ipPACS.setMinimumSize(new java.awt.Dimension(90, 36));
-        txt_ipPACS.setPreferredSize(new java.awt.Dimension(90, 36));
+        txt_ipPACS.setMaximumSize(new java.awt.Dimension(90, 28));
+        txt_ipPACS.setMinimumSize(new java.awt.Dimension(90, 28));
+        txt_ipPACS.setPreferredSize(new java.awt.Dimension(90, 28));
         txt_ipPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel8.add(txt_ipPACS);
 
@@ -137,9 +139,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe1.setPreferredSize(new java.awt.Dimension(30, 25));
         jPanel8.add(l_PleaseSpe1);
 
-        txt_portPACS.setMaximumSize(new java.awt.Dimension(70, 36));
-        txt_portPACS.setMinimumSize(new java.awt.Dimension(70, 36));
-        txt_portPACS.setPreferredSize(new java.awt.Dimension(70, 36));
+        txt_portPACS.setMaximumSize(new java.awt.Dimension(70, 28));
+        txt_portPACS.setMinimumSize(new java.awt.Dimension(70, 28));
+        txt_portPACS.setPreferredSize(new java.awt.Dimension(70, 28));
         txt_portPACS.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel8.add(txt_portPACS);
 
@@ -151,22 +153,22 @@ public class InfoPanel extends javax.swing.JPanel {
         l_teethNo.setPreferredSize(new java.awt.Dimension(60, 25));
         jPanel8.add(l_teethNo);
 
-        txt_aePACS.setMaximumSize(new java.awt.Dimension(120, 36));
-        txt_aePACS.setMinimumSize(new java.awt.Dimension(120, 36));
-        txt_aePACS.setPreferredSize(new java.awt.Dimension(120, 36));
+        txt_aePACS.setMaximumSize(new java.awt.Dimension(120, 28));
+        txt_aePACS.setMinimumSize(new java.awt.Dimension(120, 28));
+        txt_aePACS.setPreferredSize(new java.awt.Dimension(120, 28));
         txt_aePACS.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel8.add(txt_aePACS);
 
         b_ping_pacs.setText("Ping");
-        b_ping_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_ping_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_ping_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
+        b_ping_pacs.setMaximumSize(new java.awt.Dimension(120, 28));
+        b_ping_pacs.setMinimumSize(new java.awt.Dimension(80, 28));
+        b_ping_pacs.setPreferredSize(new java.awt.Dimension(80, 28));
         jPanel8.add(b_ping_pacs);
 
         b_echo_pacs.setText("Echo");
-        b_echo_pacs.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_echo_pacs.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_echo_pacs.setPreferredSize(new java.awt.Dimension(80, 36));
+        b_echo_pacs.setMaximumSize(new java.awt.Dimension(120, 28));
+        b_echo_pacs.setMinimumSize(new java.awt.Dimension(80, 28));
+        b_echo_pacs.setPreferredSize(new java.awt.Dimension(80, 28));
         jPanel8.add(b_echo_pacs);
 
         l_status_pacs.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -186,6 +188,8 @@ public class InfoPanel extends javax.swing.JPanel {
         p_worklistInfo.setPreferredSize(new java.awt.Dimension(272, 150));
         p_worklistInfo.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
+        jPanel11.setMinimumSize(new java.awt.Dimension(730, 35));
+        jPanel11.setPreferredSize(new java.awt.Dimension(730, 35));
         jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         l_PleaseSpe2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -196,9 +200,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe2.setPreferredSize(new java.awt.Dimension(70, 25));
         jPanel11.add(l_PleaseSpe2);
 
-        txt_ipWorklist.setMaximumSize(new java.awt.Dimension(90, 36));
-        txt_ipWorklist.setMinimumSize(new java.awt.Dimension(90, 36));
-        txt_ipWorklist.setPreferredSize(new java.awt.Dimension(90, 36));
+        txt_ipWorklist.setMaximumSize(new java.awt.Dimension(90, 28));
+        txt_ipWorklist.setMinimumSize(new java.awt.Dimension(90, 28));
+        txt_ipWorklist.setPreferredSize(new java.awt.Dimension(90, 28));
         txt_ipWorklist.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel11.add(txt_ipWorklist);
 
@@ -210,9 +214,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe8.setPreferredSize(new java.awt.Dimension(30, 25));
         jPanel11.add(l_PleaseSpe8);
 
-        txt_portWorklist.setMaximumSize(new java.awt.Dimension(70, 36));
-        txt_portWorklist.setMinimumSize(new java.awt.Dimension(70, 36));
-        txt_portWorklist.setPreferredSize(new java.awt.Dimension(70, 36));
+        txt_portWorklist.setMaximumSize(new java.awt.Dimension(70, 28));
+        txt_portWorklist.setMinimumSize(new java.awt.Dimension(70, 28));
+        txt_portWorklist.setPreferredSize(new java.awt.Dimension(70, 28));
         txt_portWorklist.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel11.add(txt_portWorklist);
 
@@ -224,22 +228,22 @@ public class InfoPanel extends javax.swing.JPanel {
         l_teethNo1.setPreferredSize(new java.awt.Dimension(60, 25));
         jPanel11.add(l_teethNo1);
 
-        txt_aeWorklist.setMaximumSize(new java.awt.Dimension(120, 36));
-        txt_aeWorklist.setMinimumSize(new java.awt.Dimension(120, 36));
-        txt_aeWorklist.setPreferredSize(new java.awt.Dimension(120, 36));
+        txt_aeWorklist.setMaximumSize(new java.awt.Dimension(120, 28));
+        txt_aeWorklist.setMinimumSize(new java.awt.Dimension(120, 28));
+        txt_aeWorklist.setPreferredSize(new java.awt.Dimension(120, 28));
         txt_aeWorklist.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel11.add(txt_aeWorklist);
 
         b_ping_worklist.setText("Ping");
-        b_ping_worklist.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_ping_worklist.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_ping_worklist.setPreferredSize(new java.awt.Dimension(80, 36));
+        b_ping_worklist.setMaximumSize(new java.awt.Dimension(120, 28));
+        b_ping_worklist.setMinimumSize(new java.awt.Dimension(80, 28));
+        b_ping_worklist.setPreferredSize(new java.awt.Dimension(80, 28));
         jPanel11.add(b_ping_worklist);
 
         b_echo_worklist.setText("Echo");
-        b_echo_worklist.setMaximumSize(new java.awt.Dimension(120, 36));
-        b_echo_worklist.setMinimumSize(new java.awt.Dimension(80, 36));
-        b_echo_worklist.setPreferredSize(new java.awt.Dimension(80, 36));
+        b_echo_worklist.setMaximumSize(new java.awt.Dimension(120, 28));
+        b_echo_worklist.setMinimumSize(new java.awt.Dimension(80, 28));
+        b_echo_worklist.setPreferredSize(new java.awt.Dimension(80, 28));
         jPanel11.add(b_echo_worklist);
 
         l_status_worklist.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -259,6 +263,8 @@ public class InfoPanel extends javax.swing.JPanel {
         p_workstationInfo.setPreferredSize(new java.awt.Dimension(272, 150));
         p_workstationInfo.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
+        jPanel10.setMinimumSize(new java.awt.Dimension(573, 35));
+        jPanel10.setPreferredSize(new java.awt.Dimension(573, 35));
         jPanel10.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         l_PleaseSpe6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -269,9 +275,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe6.setPreferredSize(new java.awt.Dimension(70, 25));
         jPanel10.add(l_PleaseSpe6);
 
-        txt_ipWorkstation.setMaximumSize(new java.awt.Dimension(90, 36));
-        txt_ipWorkstation.setMinimumSize(new java.awt.Dimension(90, 36));
-        txt_ipWorkstation.setPreferredSize(new java.awt.Dimension(90, 36));
+        txt_ipWorkstation.setMaximumSize(new java.awt.Dimension(90, 28));
+        txt_ipWorkstation.setMinimumSize(new java.awt.Dimension(90, 28));
+        txt_ipWorkstation.setPreferredSize(new java.awt.Dimension(90, 28));
         txt_ipWorkstation.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel10.add(txt_ipWorkstation);
 
@@ -283,9 +289,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_PleaseSpe7.setPreferredSize(new java.awt.Dimension(30, 25));
         jPanel10.add(l_PleaseSpe7);
 
-        txt_portWorkstation.setMaximumSize(new java.awt.Dimension(70, 36));
-        txt_portWorkstation.setMinimumSize(new java.awt.Dimension(70, 36));
-        txt_portWorkstation.setPreferredSize(new java.awt.Dimension(70, 36));
+        txt_portWorkstation.setMaximumSize(new java.awt.Dimension(70, 28));
+        txt_portWorkstation.setMinimumSize(new java.awt.Dimension(70, 28));
+        txt_portWorkstation.setPreferredSize(new java.awt.Dimension(70, 28));
         txt_portWorkstation.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel10.add(txt_portWorkstation);
 
@@ -297,9 +303,9 @@ public class InfoPanel extends javax.swing.JPanel {
         l_teethNo3.setPreferredSize(new java.awt.Dimension(60, 25));
         jPanel10.add(l_teethNo3);
 
-        txt_aeWorkstation.setMaximumSize(new java.awt.Dimension(120, 36));
-        txt_aeWorkstation.setMinimumSize(new java.awt.Dimension(120, 36));
-        txt_aeWorkstation.setPreferredSize(new java.awt.Dimension(120, 36));
+        txt_aeWorkstation.setMaximumSize(new java.awt.Dimension(120, 28));
+        txt_aeWorkstation.setMinimumSize(new java.awt.Dimension(120, 28));
+        txt_aeWorkstation.setPreferredSize(new java.awt.Dimension(120, 28));
         txt_aeWorkstation.setSelectionColor(new java.awt.Color(0, 0, 0));
         jPanel10.add(txt_aeWorkstation);
 
