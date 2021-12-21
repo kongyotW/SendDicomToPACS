@@ -263,8 +263,8 @@ public class InfoPanel extends javax.swing.JPanel {
         p_workstationInfo.setPreferredSize(new java.awt.Dimension(272, 150));
         p_workstationInfo.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
-        jPanel10.setMinimumSize(new java.awt.Dimension(573, 35));
-        jPanel10.setPreferredSize(new java.awt.Dimension(573, 35));
+        jPanel10.setMinimumSize(new java.awt.Dimension(730, 35));
+        jPanel10.setPreferredSize(new java.awt.Dimension(730, 35));
         jPanel10.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         l_PleaseSpe6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N

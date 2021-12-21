@@ -98,7 +98,7 @@ public class MainRunner {
         mainDialog.pack();
         mainDialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 //        mainDialog.setModal(true);
-        mainDialog.setTitle("Send DICOM to PACS [version 0.2]");
+        mainDialog.setTitle("Send DICOM to PACS [version 0.3]");
         mainDialog.setAlwaysOnTop(true);
         mainDialog.setVisible(true);                
 //        PacsManager sendToPac = new PacsManager(infoPanel);
